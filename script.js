@@ -20,7 +20,7 @@ function renderProducts(category = 'all') {
     renderFilteredItems(filtered);
 }
 
-function renderFilteredItems(items) {
+/* function renderFilteredItems(items) {
     const grid = document.getElementById('product-grid');
     grid.innerHTML = '';
     if (items.length === 0) {
@@ -44,7 +44,48 @@ function renderFilteredItems(items) {
                 </button>
             </div>`;
     });
+}*/
+function renderFilteredItems(items) {
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = '';
+
+    if (items.length === 0) {
+        // Updated to use translation for "No products found" if you have it
+        grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-400">
+            ${translations[currentLang]["noProducts"] || "No products found matching your criteria."}
+        </div>`;
+        return;
+    }
+
+    items.forEach((product, index) => {
+        // 1. Determine category color
+        let color = product.category === "pad" ? "pink" : "blue";
+        
+        // 2. Calculate animation delay (staggered effect)
+        const delay = index < 12 ? index * 0.05 : 0; 
+
+        // 3. Generate the card
+        grid.innerHTML += `
+            <div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col animate-pop" 
+                 style="animation-delay: ${delay}s">
+                <div class="h-32 bg-gray-50 rounded-xl flex items-center justify-center mb-3">
+                    <i class="fas ${product.icon} text-${color}-300 text-5xl"></i>
+                </div>
+                <h4 class="font-bold text-gray-800 text-sm mb-1 line-clamp-1">${product.name}</h4>
+                <p class="text-green-700 font-extrabold text-xs mb-3">Rs. ${product.price}</p>
+                <button 
+                    onclick="addToCart(${product.id}, '${product.name}', ${product.price})"
+                    class="w-full py-2 bg-gray-900 text-white text-xs rounded-lg font-bold hover:bg-${color}-600 active:scale-95 transition"
+                    data-id="${product.id}" 
+                    data-name="${product.name}" 
+                    data-price="${product.price}" 
+                    data-i18n="addToCart">
+                    ${translations[currentLang]["addToCart"]}
+                </button>
+            </div>`;
+    });
 }
+
 
 // 1. Show Shop Function
 function showShop(category) {
