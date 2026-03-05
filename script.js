@@ -20,31 +20,6 @@ function renderProducts(category = 'all') {
     renderFilteredItems(filtered);
 }
 
-/* function renderFilteredItems(items) {
-    const grid = document.getElementById('product-grid');
-    grid.innerHTML = '';
-    if (items.length === 0) {
-        grid.innerHTML = '<div class="col-span-full text-center py-20 text-gray-400">No products found matching your criteria.</div>';
-        return;
-    }
-    items.forEach(product => {
-        let color = product.category === "pad" ? "pink" : "blue";
-        grid.innerHTML += `<div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col animate-pop">
-                <div class="h-32 bg-gray-50 rounded-xl flex items-center justify-center mb-3 text-green-200">
-                    <i class="fas ${product.icon} text-${color}-300 text-5xl"></i>
-                </div>
-                <h4 class="font-bold text-gray-800 text-sm mb-1 line-clamp-1">${product.name}</h4>
-                <p class="text-green-700 font-extrabold text-xs mb-3">Rs. ${product.price}</p>
-                <button 
-                    class="w-full py-2 bg-gray-900 text-white text-xs rounded-lg font-bold hover:bg-${color}-600 active:scale-95 transition"
-                    data-id="${product.id}" 
-                    data-name="${product.name}" 
-                    data-price="${product.price}" data-i18n="addToCart">
-                    ${translations[currentLang]["addToCart"]}
-                </button>
-            </div>`;
-    });
-}*/
 function renderFilteredItems(items) {
     const grid = document.getElementById('product-grid');
     grid.innerHTML = '';
@@ -365,6 +340,27 @@ function removeFromCart(index) {
     renderCart();
 }
 
+function saveOrderToHistory(cartItems, total) {
+    // 1. Get existing orders or start a new list
+    let orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
+
+    // 2. Create the new order object
+    const newOrder = {
+        id: 'SN-' + Math.floor(Math.random() * 100000), // Random Order ID
+        date: new Date().toLocaleDateString(),
+        items: [...cartItems],
+        total: total,
+        status: 'Sent via WhatsApp' // Initial status
+    };
+
+    // 3. Add to the beginning of the list and keep only the last 5
+    orders.unshift(newOrder);
+    orders = orders.slice(0, 5);
+
+    // 4. Save back to local storage
+    localStorage.setItem('sanitary_nepal_orders', JSON.stringify(orders));
+}
+
 // 4. Order via WhatsApp
 function checkoutWhatsApp() {
     if (cart.length === 0) return alert("Cart is empty!");
@@ -388,6 +384,8 @@ function checkoutWhatsApp() {
     message += "Please confirm availability and delivery time.";
     // Replace with your actual business number
     const phoneNumber = "9779858070017";
+    // save order history locally
+    saveOrderToHistory(cart,total);
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
