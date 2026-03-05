@@ -361,6 +361,34 @@ function saveOrderToHistory(cartItems, total) {
     localStorage.setItem('sanitary_nepal_orders', JSON.stringify(orders));
 }
 
+function renderOrderHistory() {
+    const orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
+    const container = document.getElementById('order-history-list');
+    
+    if (orders.length === 0) {
+        container.innerHTML = `<p class="text-gray-400 text-xs text-center py-4">No recent orders found.</p>`;
+        return;
+    }
+
+    container.innerHTML = orders.map(order => `
+        <div class="bg-gray-50 p-3 rounded-xl mb-3 border border-gray-100 reveal active">
+            <div class="flex justify-between items-start mb-2">
+                <div>
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">${order.id}</span>
+                    <p class="text-xs font-bold text-gray-800">${order.date}</p>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-bold">
+                    ${order.status}
+                </span>
+            </div>
+            <div class="text-[11px] text-gray-500 mb-2">
+                ${order.items.map(item => `${item.quantity}x ${item.name}`).join(', ')}
+            </div>
+            <p class="text-xs font-black text-gray-900">Total: Rs. ${order.total}</p>
+        </div>
+    `).join('');
+}
+
 // 4. Order via WhatsApp
 function checkoutWhatsApp() {
     if (cart.length === 0) return alert("Cart is empty!");
