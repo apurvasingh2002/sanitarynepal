@@ -480,3 +480,24 @@ window.onscroll = function () {
         btn.classList.remove('opacity-100', 'translate-y-0');
     }
 };
+
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: Stop observing after it's revealed
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Triggers when 10% of the element is visible
+    });
+
+    // Attach to all elements with the .reveal class
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// Run this when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initScrollReveal);
+
