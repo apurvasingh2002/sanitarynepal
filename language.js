@@ -218,7 +218,7 @@ const translations = {
         freeDelivery: "<i class='fas fa-check-circle mr-1'></i> नि:शुल्क डेलिभरी प्राप्त भयो!",
         deliveryNotes: "डेलिभरी नोट्स / निर्देशनहरू",
         items:"वस्तुहरू",
-        clearAll:"<i class='fas fa-eraser mr-1'></i> सबै खाली गर्नुहोस्",
+        clearAll:"<i class='fas fa-trash-alt mr-1'></i> सबै खाली गर्नुहोस्",
         // toast section
         itemAdded:"सामान थपियो",
         itemAddedDesc:"तपाईंको कार्टमा छ।",
@@ -246,6 +246,12 @@ const translations = {
         changeLanguage:"<i class='fas fa-globe'></i> भाषा परिवर्तन गर्नुहोस्",
     }
 };
+translations.en.reorderSuccess = "Cart refilled from history!";
+translations.ne.reorderSuccess = "अर्डर फेरि कार्टमा थपियो!";
+translations.en.recentOrders = "Recent Orders";
+translations.ne.recentOrders = "भर्खरको खरिदहरू";
+translations.en.reOrder = "<i class='fas fa-redo-alt text-[10px]'></i> Re-order";
+translations.ne.reOrder = "<i class='fas fa-redo-alt text-[10px]'></i> पुन: खरिद गर्नुहोस्";
 
 let currentLang = 'en'; // Default language
 function toggleLanguage() {
