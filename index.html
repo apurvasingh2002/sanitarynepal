@@ -21,35 +21,37 @@
 <header class="sticky top-0 w-full bg-white shadow-sm z-[105]">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <div class="flex items-center gap-3">
-    <div class="h-10 w-auto flex-shrink-0">
-        <img src="logo.jpg" alt="Logo" class="h-full w-auto object-contain">
-    </div>
-    
-    <div class="flex flex-col justify-center leading-none">
-        <h1 class="text-xl font-extrabold text-gray-900 tracking-tight whitespace-nowrap" data-i18n="sanitaryNepal">
-            Sanitary <span class="text-green-600">Nepal</span>
-        </h1>
-    </div>
-</div>
+            <div class="h-10 w-auto flex-shrink-0">
+               <img src="logo.jpg" alt="Logo" class="h-full w-auto object-contain">
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-900 tracking-tight"
+                data-i18n="sanitaryNepal">Sanitary <span class="text-green-600">Nepal</span></h1>
+        </div>
 
         <nav class="hidden md:flex space-x-2 font-medium">
-            <a href="javascript:void(0)" onclick="navigateTo('home')" class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
+            <a href="javascript:void(0)" onclick="navigateTo('home')"
+               class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
                data-i18n="navHome">Home</a>
-            <a href="javascript:void(0)" onclick="showShop('all')" class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
+            <a href="javascript:void(0)" onclick="showShop('all')"
+               class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
                data-i18n="navShop">Shop</a>
-            <a href="javascript:void(0)" onclick="navigateTo('about-section')" class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
+            <a href="javascript:void(0)" onclick="navigateTo('about-section')"
+               class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
                data-i18n="navAbout">About</a>
-            <a href="javascript:void(0)" onclick="navigateTo('contact-section')" class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
+            <a href="javascript:void(0)" onclick="navigateTo('contact-section')"
+               class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
                data-i18n="navContact">Contact</a>
-            <a href="javascript:void(0)" onclick="navigateTo('faq-section')" class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
+            <a href="javascript:void(0)" onclick="navigateTo('faq-section')"
+               class="px-2 py-1 hover:text-green-600 hover:bg-green-600 hover:text-white hover:border-green-600 hover:rounded"
                data-i18n="navFAQ">FAQ</a>
         </nav>
 
         <div class="flex items-center space-x-1">
-                <button onclick="toggleLanguage()" id="lang-btn"
-                        class="text-xs font-bold border border-green-600 px-2 py-1 rounded hover:bg-green-600 hover:text-white transition uppercase">
-                    नेपाली
-                </button>         
+            <button onclick="toggleLanguage()" id="lang-btn"
+                    class="text-xs font-bold border border-green-600 px-2 py-1 rounded hover:bg-green-600 hover:text-white transition uppercase">
+                नेपाली
+            </button>
 
             <div class="relative">
                 <button onclick="toggleCart()" class="relative px-2 text-gray-700 hover:text-green-600 transition">
@@ -73,10 +75,11 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
             <div class="reveal">
-            <h2 class="text-2xl md:text-5xl font-bold text-gray-900 leading-tight mb-6"data-i18n="heroTitle">
-                Your Trusted Partner for <br><span class="text-green-600">Comfort & Care</span>
-            </h2>
+                <h2 class="text-2xl md:text-5xl font-bold text-gray-900 leading-tight mb-6" data-i18n="heroTitle">
+                    Your Trusted Partner for <br><span class="text-green-600">Comfort & Care</span>
+                </h2>
             </div>
+
             <p class="text-base md:text-lg text-gray-600 mb-8"
                data-i18n="heroDesc">Quality Sanitary Pads & Diapers for Every Nepali Family. Stay confident and dry, every single day.</p>
             <button class="bg-green-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-800 transition shadow-lg"
@@ -134,7 +137,7 @@
                         data-id="f1"
                         data-name="Premium Dry Pants (L)"
                         data-price="1250">
-                   Add to Cart
+                    Add to Cart
                 </button>
             </div>
 
@@ -191,7 +194,8 @@
 
             <p class="text-gray-600 mb-4" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
             <button class="bg-white text-green-700 border-2 border-green-700 px-6 py-2 rounded-full font-bold hover:bg-green-700 hover:text-white transition"
-                    onclick="showShop('pad');window.scrollTo(0,0);" data-i18n="shopPads">Shop Pads</button>
+                    onclick="showShop('pad');
+                    window.scrollTo(0, 0);" data-i18n="shopPads">Shop Pads</button>
         </div>
 
         <div class="bg-blue-100 rounded-3xl p-8 flex flex-col items-center text-center group hover:shadow-md transition">
@@ -255,10 +259,22 @@
         <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-2">
             // script generated products
         </div>
-        <div id="order-history-list></div>
+        <div class="max-w-7xl mt-16 mb-12">
+            <div class="px-5 mb-6 flex justify-between items-center">
+                <div>
+                    <h2 class="text-lg font-black text-gray-900 uppercase tracking-widest" data-i18n="recentOrders">Recent Orders</h2>
+                    <div class="h-1 w-10 bg-green-500 mt-1 rounded-full"></div>
+                </div>
+                <button id="clear-history-btn" onclick="clearOrderHistory()" class="text-xs font-bold
+                text-red-400 hover:text-red-600 transition flex items-center gap-1" data-i18n="clearAll">
+                    <i class="fas fa-trash-alt"></i> Clear All
+                </button>
+            </div>
+
+            <div id="order-history-list"></div>
+        </div>
     </div>
 </section>
-<div id="order-history-list></div>
 <section id="about-section" class="hidden py-20 bg-green-50">
     <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12">
@@ -351,7 +367,8 @@
                         <div>
                             <p class="font-bold" data-i18n="contactMapTitle">Our Head Office</p>
 
-                            <p class="text-sm text-gray-500" data-i18n="contactMapAddress">New Road, Nepalgunj, Nepal</p>
+                            <p class="text-sm text-gray-500"
+                               data-i18n="contactMapAddress">New Road, Nepalgunj, Nepal</p>
                         </div>
                     </div>
 
@@ -375,7 +392,8 @@
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900" data-i18n="faqTitle">Frequently Asked Questions</h2>
 
-            <p class="text-gray-500 mt-2" data-i18n="faqDesc">Everything you need to know about our products and service.</p>
+            <p class="text-gray-500 mt-2"
+               data-i18n="faqDesc">Everything you need to know about our products and service.</p>
         </div>
 
         <div class="space-y-4">
@@ -450,9 +468,11 @@
 <section id="testimonials-section" class="py-20 bg-green-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <span class="text-green-600 font-bold uppercase tracking-widest text-sm" data-i18n="testimonialTitle1">Real Stories</span>
+            <span class="text-green-600 font-bold uppercase tracking-widest text-sm"
+                  data-i18n="testimonialTitle1">Real Stories</span>
 
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2" data-i18n="testimonialTitle2">Trusted by Nepali Families</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2"
+                data-i18n="testimonialTitle2">Trusted by Nepali Families</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -463,7 +483,8 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
 
-                    <p class="text-gray-600 italic mb-6" data-i18n="testimonial1Desc">"Ordering diapers used to be a hassle, but Sanitary Nepal makes it so easy. The WhatsApp ordering is perfect for busy moms!"</p>
+                    <p class="text-gray-600 italic mb-6"
+                       data-i18n="testimonial1Desc">"Ordering diapers used to be a hassle, but Sanitary Nepal makes it so easy. The WhatsApp ordering is perfect for busy moms!"</p>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -484,7 +505,8 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
 
-                    <p class="text-gray-600 italic mb-6" data-i18n="testimonial2Desc">"The Bamboo Organic pads are a game changer. Soft,
+                    <p class="text-gray-600 italic mb-6"
+                       data-i18n="testimonial2Desc">"The Bamboo Organic pads are a game changer. Soft,
                     absorbent, and I love that they are better for the environment."</p>
                 </div>
 
@@ -506,7 +528,8 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
 
-                    <p class="text-gray-600 italic mb-6" data-i18n="testimonial3Desc">"Highly recommend their bulk delivery for our local health clinic. Always on time and the quality is consistent."</p>
+                    <p class="text-gray-600 italic mb-6"
+                       data-i18n="testimonial3Desc">"Highly recommend their bulk delivery for our local health clinic. Always on time and the quality is consistent."</p>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -528,7 +551,8 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
             <div class="col-span-1 md:col-span-1">
-                <h2 class="text-white text-2xl font-bold mb-6"><span data-i18n="sanitary">Sanitary</span> <span class="text-green-500" data-i18n="nepal">Nepal</span></h2>
+                <h2 class="text-white text-2xl font-bold mb-6"><span data-i18n="sanitary">Sanitary</span> <span
+                        class="text-green-500" data-i18n="nepal">Nepal</span></h2>
 
                 <p class="text-sm leading-relaxed mb-6" data-i18n="footerDesc">
                     Providing high-quality, affordable hygiene solutions for families across Nepal. Committed to comfort, care, and sustainability.
@@ -548,11 +572,13 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm" data-i18n="quickLinks">Quick Links</h4>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm"
+                    data-i18n="quickLinks">Quick Links</h4>
                 <ul class="space-y-4 text-sm">
                     <li><a href="javascript:void(0)" onclick="navigateTo('home')"
                            class="hover:text-green-500 transition" data-i18n="navHome">Home</a></li>
-                    <li><a href="javascript:void(0)" onclick="showShop('all');window.scrollTo(0,0);"
+                    <li><a href="javascript:void(0)" onclick="showShop('all');
+                    window.scrollTo(0, 0);"
                            class="hover:text-green-500 transition" data-i18n="shopProducts">Shop Products</a></li>
                     <li><a href="javascript:void(0)" onclick="navigateTo('about-section')"
                            class="hover:text-green-500 transition" data-i18n="footerAbout">About Our Mission</a></li>
@@ -562,13 +588,17 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm" data-i18n="categories">Categories</h4>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm"
+                    data-i18n="categories">Categories</h4>
                 <ul class="space-y-4 text-sm">
-                    <li><a href="javascript:void(0)" onclick="showShop('pad');window.scrollTo(0,0);"
+                    <li><a href="javascript:void(0)" onclick="showShop('pad');
+                    window.scrollTo(0, 0);"
                            class="hover:text-green-500 transition" data-i18n="categoryPads">Sanitary Pads</a></li>
-                    <li><a href="javascript:void(0)" onclick="showShop('diaper');window.scrollTo(0,0);"
+                    <li><a href="javascript:void(0)" onclick="showShop('diaper');
+                    window.scrollTo(0, 0);"
                            class="hover:text-green-500 transition" data-i18n="categoryBabyDiapers">Baby Diapers</a></li>
-                    <li><a href="javascript:void(0)" onclick="showShop('all');window.scrollTo(0,0);"
+                    <li><a href="javascript:void(0)" onclick="showShop('all');
+                    window.scrollTo(0, 0);"
                            class="hover:text-green-500 transition" data-i18n="maternityCare">Maternity Care</a></li>
                     <li><a href="javascript:void(0)" onclick="navigateTo('contact-section')"
                            class="hover:text-green-500 transition" data-i18n="bulkOrders">Bulk Orders</a></li>
@@ -576,7 +606,8 @@
             </div>
 
             <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm" data-i18n="footerContact">Contact Us</h4>
+                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm"
+                    data-i18n="footerContact">Contact Us</h4>
                 <ul class="space-y-4 text-sm">
                     <li class="flex items-start gap-3">
                         <i class="fas fa-map-marker-alt text-green-500 mt-1"></i>
@@ -611,17 +642,19 @@
      class="fixed top-0 right-0 h-[calc(100%-40px)] w-80 md:w-96 bg-white shadow-2xl z-[200]
     transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
     <div class="p-2 border-b flex justify-between items-center bg-green-50">
-        <h3 class="text-xl font-bold text-green-800" data-i18n="cartTitle"><i class="fas fa-shopping-basket mr-2"></i> Your Cart</h3>
+        <h3 class="text-xl font-bold text-green-800" data-i18n="cartTitle"><i
+                class="fas fa-shopping-basket mr-2"></i> Your Cart</h3>
         <button onclick="toggleCart()" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
     </div>
 
     <div id="cart-items-list" class="flex-grow overflow-y-auto p-2 space-y-4">
-%{--        <p class="text-gray-400 text-center mt-10" data-i18n="emptyCart">Your cart is empty.</p>--}%
+        %{--        <p class="text-gray-400 text-center mt-10" data-i18n="emptyCart">Your cart is empty.</p>--}%
     </div>
 
     <div class="p-6 border-t bg-gray-50">
         <div class="mb-4">
-            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2" data-i18n="deliveryNotes">Delivery Notes / Instructions</label>
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2"
+                   data-i18n="deliveryNotes">Delivery Notes / Instructions</label>
             <textarea id="cart-notes" rows="2"
                       class="w-full px-3 py-2 text-sm border rounded-xl focus:ring-1 focus:ring-green-600 focus:outline-none resize-none"
                       placeholder="Landmarks, gate codes, or delivery time preferences..."></textarea>
@@ -633,46 +666,59 @@
         </div>
 
         <button onclick="checkoutWhatsApp()"
-                class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition flex items-center justify-center gap-2 shadow-lg" data-i18n="checkoutBtn">
+                class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition flex items-center justify-center gap-2 shadow-lg"
+                data-i18n="checkoutBtn">
             <i class="fab fa-whatsapp"></i> Order via WhatsApp
         </button>
         <button onclick="toggleCart()"
-                class="w-full text-gray-500 text-sm font-semibold hover:text-green-600 transition" data-i18n="keepShopping">
+                class="w-full text-gray-500 text-sm font-semibold hover:text-green-600 transition"
+                data-i18n="keepShopping">
             <i class="fas fa-arrow-left mr-1"></i> Keep Shopping
         </button>
 
-        <p class="text-[10px] text-gray-400 text-center mt-3 uppercase tracking-widest" data-i18n="cashOnDelivery">Cash on Delivery Available</p>
+        <p class="text-[10px] text-gray-400 text-center mt-3 uppercase tracking-widest"
+           data-i18n="cashOnDelivery">Cash on Delivery Available</p>
     </div>
 </div>
 
-<div id="mobile-menu-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/40 z-[290] hidden backdrop-blur-sm"></div>
+<div id="mobile-menu-overlay" onclick="toggleMobileMenu()"
+     class="fixed inset-0 bg-black/40 z-[290] hidden backdrop-blur-sm"></div>
 
-<div id="mobile-menu-sidebar" class="fixed top-0 left-0 w-[280px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-100">
+<div id="mobile-menu-sidebar"
+     class="fixed top-0 left-0 w-[280px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-100">
     <div class="p-6 flex flex-col h-full">
         <div class="flex justify-between items-center mb-10">
-            <div class="text-xl font-bold text-gray-900" data-i18n="sanitaryNepal">Sanitary <span class="text-green-600">Nepal</span></div>
+            <div class="text-xl font-bold text-gray-900" data-i18n="sanitaryNepal">Sanitary <span
+                    class="text-green-600">Nepal</span></div>
             <button onclick="toggleMobileMenu()" class="text-3xl text-gray-300 hover:text-red-500">&times;</button>
         </div>
 
         <nav class="flex flex-col gap-1 text-base font-semibold text-gray-600">
-            <a href="javascript:void(0)" onclick="toggleMobileMenu(); navigateTo('home')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
+            <a href="javascript:void(0)" onclick="toggleMobileMenu();
+            navigateTo('home')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
                 <i class="fas fa-home text-green-600 w-6"></i> <span data-i18n="navHome">Home</span>
             </a>
-            <a href="javascript:void(0)" onclick="toggleMobileMenu(); showShop('all')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
+            <a href="javascript:void(0)" onclick="toggleMobileMenu();
+            showShop('all')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
                 <i class="fas fa-shopping-bag text-green-600 w-6"></i> <span data-i18n="navShop">Shop</span>
             </a>
-            <a href="javascript:void(0)" onclick="toggleMobileMenu(); navigateTo('about-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
+            <a href="javascript:void(0)" onclick="toggleMobileMenu();
+            navigateTo('about-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
                 <i class="fas fa-info-circle text-green-600 w-6"></i> <span data-i18n="navAbout">About</span>
             </a>
-            <a href="javascript:void(0)" onclick="toggleMobileMenu(); navigateTo('contact-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
+            <a href="javascript:void(0)" onclick="toggleMobileMenu();
+            navigateTo('contact-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
                 <i class="fas fa-envelope text-green-600 w-6"></i> <span data-i18n="navContact">Contact</span>
             </a>
         </nav>
 
         <div class="mt-auto space-y-4">
-            <button onclick="toggleLanguage()" class="w-full py-3 bg-gray-50 rounded-xl text-sm font-bold text-gray-700 flex items-center justify-center gap-2" data-i18n="changeLanguage">
+            <button onclick="toggleLanguage()"
+                    class="w-full py-3 bg-gray-50 rounded-xl text-sm font-bold text-gray-700 flex items-center justify-center gap-2"
+                    data-i18n="changeLanguage">
                 <i class="fas fa-globe"></i> भाषा परिवर्तन गर्नुहोस्
             </button>
+
             <p class="text-[10px] text-center text-gray-400 uppercase tracking-widest">v1.0 • Nepalgunj, Nepal</p>
         </div>
     </div>
