@@ -42,6 +42,7 @@ const translations = {
         shopPads: "Shop Pads",
         shopDiapers: "shop Diapers",
         addToCart:"Add to Cart",
+        noProducts:"No products found matching your criteria.",
         // contact section
         contactTitle: "Get In Touch",
         contactDesc: "Have a question about our products or interested in wholesale/bulk orders?\n" +
@@ -164,6 +165,7 @@ const translations = {
         shopPads: "प्याड किन्नुहोस्",
         shopDiapers: "डायपर किन्नुहोस्",
         addToCart:"कार्टमा थप्नुहोस्",
+        noProducts:"तपाईंको मापदण्डसँग मेल खाने कुनै सामानहरू भेटिएन।",
         // contact section
         contactTitle: "सम्पर्कमा रहनुहोस्",
         contactDesc: "हाम्रा उत्पादनहरूको बारेमा कुनै प्रश्न छ वा थोक/थोक अर्डरहरूमा रुचि छ?\n" +
