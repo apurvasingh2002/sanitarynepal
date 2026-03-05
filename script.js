@@ -35,9 +35,9 @@ function renderFilteredItems(items) {
     items.forEach((product, index) => {
         // 1. Determine category color
         let color = product.category === "pad" ? "pink" : "blue";
-        
+
         // 2. Calculate animation delay (staggered effect)
-        const delay = index < 12 ? index * 0.05 : 0; 
+        const delay = index < 12 ? index * 0.05 : 0;
 
         // 3. Generate the card
         grid.innerHTML += `
@@ -61,7 +61,6 @@ function renderFilteredItems(items) {
     });
 }
 
-
 // 1. Show Shop Function
 function showShop(category) {
     document.getElementById('priceSort').selectedIndex = 0;
@@ -71,6 +70,7 @@ function showShop(category) {
     navigateTo('shop-section');
     // 2. Render the correct products
     renderProducts(category);
+    renderOrderHistory();
     // 3. Highlight the correct button
     const btnIds = {'all': 'btn-filter-all', 'pad': 'btn-filter-pad', 'diaper': 'btn-filter-diaper'};
 
@@ -362,31 +362,91 @@ function saveOrderToHistory(cartItems, total) {
 }
 
 function renderOrderHistory() {
-    const orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
     const container = document.getElementById('order-history-list');
-    
+    const clearBtn = document.getElementById('clear-history-btn'); // Ensure your HTML has this ID
+    if (!container) return;
+
+    const orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
+
+    // Toggle "Clear History" button visibility
+    if (clearBtn) {
+        clearBtn.style.display = orders.length > 0 ? 'block' : 'none';
+    }
+
     if (orders.length === 0) {
-        container.innerHTML = `<p class="text-gray-400 text-xs text-center py-4">No recent orders found.</p>`;
+        container.innerHTML = `<div class="col-span-full text-center py-10 text-gray-400 text-sm">No recent orders yet.</div>`;
         return;
     }
 
+    // Set grid layout for desktop and mobile
+    container.className = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 py-2";
+
     container.innerHTML = orders.map(order => `
-        <div class="bg-gray-50 p-3 rounded-xl mb-3 border border-gray-100 reveal active">
-            <div class="flex justify-between items-start mb-2">
-                <div>
-                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">${order.id}</span>
-                    <p class="text-xs font-bold text-gray-800">${order.date}</p>
-                </div>
-                <span class="text-[10px] px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-bold">
-                    ${order.status}
-                </span>
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col animate-pop relative h-full">
+            <div class="absolute top-4 right-4 flex flex-col items-center gap-3">
+                <div class="w-2.5 h-2.5 bg-green-500 rounded-full shadow-[0_0_5px_rgba(34,197,94,0.5)]"></div>
+                <button onclick="deleteOrder('${order.id}')" class="text-red-400 hover:text-red-600 p-1">
+                    <i class="fas fa-trash-alt text-[15px]"></i>
+                </button>
             </div>
-            <div class="text-[11px] text-gray-500 mb-2">
-                ${order.items.map(item => `${item.quantity}x ${item.name}`).join(', ')}
+            <div class="mb-3 pr-6">
+                <span class="text-[10px] font-bold text-gray-300 block uppercase tracking-tighter">ID: ${order.id}</span>
+                <p class="text-xs font-bold text-gray-800">${order.date}</p>
             </div>
-            <p class="text-xs font-black text-gray-900">Total: Rs. ${order.total}</p>
+            <div class="flex-grow">
+                <p class="text-xs text-gray-500 line-clamp-2 leading-tight mb-3 min-h-[32px]">
+                    ${order.items.map(item => `${item.quantity}x ${item.name}`).join(', ')}
+                </p>
+                <p class="text-sm font-black text-green-700 mb-4">Rs. ${order.total}</p>
+            </div>
+            <button onclick="reorder('${order.id}')" 
+                class="w-full py-2.5 bg-gray-900 hover:bg-green-600 text-white text-xs 
+                rounded-xl font-bold active:scale-95 transition flex items-center justify-center gap-2" data-i18n="reOrder">
+                ${translations[currentLang]['reOrder']}
+            </button>
         </div>
     `).join('');
+}
+function reorder(orderId) {
+    // 1. Find the specific order in history
+    const orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
+    const orderToRepeat = orders.find(o => o.id === orderId);
+
+    if (orderToRepeat) {
+        // 2. Replace current cart with these items
+        // (Or use cart.push(...orderToRepeat.items) if you'd rather add to existing)
+        cart = [...orderToRepeat.items];
+
+        // 3. Update UI and open the cart so they see it worked
+        updateCartUI();
+        renderCart();
+        // if (typeof toggleCart === "function") toggleCart();
+
+        // 4. Show a quick toast
+        showToast(translations[currentLang].reorderSuccess || "Cart refilled from history!");
+    }
+}
+function clearOrderHistory() {
+    if(confirm("Clear your order history?")) {
+        localStorage.removeItem('sanitary_nepal_orders');
+        renderOrderHistory();
+    }
+}
+function deleteOrder(orderId) {
+    // 1. Get current orders
+    let orders = JSON.parse(localStorage.getItem('sanitary_nepal_orders')) || [];
+
+    // 2. Filter out the one we want to delete
+    orders = orders.filter(order => order.id !== orderId);
+
+    // 3. Save back to local storage
+    localStorage.setItem('sanitary_nepal_orders', JSON.stringify(orders));
+
+    // 4. Re-render the list immediately
+    renderOrderHistory();
+
+    // Call with isDelete = true
+    showToast('', true);
 }
 
 // 4. Order via WhatsApp
@@ -413,7 +473,8 @@ function checkoutWhatsApp() {
     // Replace with your actual business number
     const phoneNumber = "9779858070017";
     // save order history locally
-    saveOrderToHistory(cart,total);
+    saveOrderToHistory(cart, total);
+    renderOrderHistory();
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
@@ -428,32 +489,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function showToast(name) {
+function showToast(name, isDelete = false) {
     // 1. Create Overlay
     const overlay = document.createElement('div');
     overlay.className = "modal-overlay";
     overlay.id = "active-modal";
 
-    // 2. Create Modal Content
+    // 2. Define content based on action
+    const title = isDelete
+        ? (currentLang === 'ne' ? "अर्डर हटाइयो" : "Order Removed")
+        : translations[currentLang]['itemAdded'];
+
+    const description = isDelete
+        ? (currentLang === 'ne' ? "तपाईंको इतिहासबाट अर्डर सफलतापूर्वक हटाइयो।" : "The order has been removed from your history.")
+        : `${name} ${translations[currentLang]['itemAddedDesc']}`;
+
+    const icon = isDelete ? "fa-trash-alt" : "fa-shopping-bag";
+    const iconBg = isDelete ? "bg-red-100" : "bg-green-100";
+    const iconColor = isDelete ? "text-red-600" : "text-green-600";
+    const btnColor = isDelete ? "bg-red-600 hover:bg-red-700" : "bg-green-600 hover:bg-green-700";
+
+    // 3. Create Modal Content
     overlay.innerHTML = `
         <div class="success-modal">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-shopping-bag text-3xl text-green-600"></i>
+            <div class="w-20 h-20 ${iconBg} rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas ${icon} text-3xl ${iconColor}"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1" data-i18n="itemAdded">${translations[currentLang]['itemAdded']}</h3>
-            <p class="text-gray-500 mb-6" data-i18n="itemAddedDesc">${name} ${translations[currentLang]['itemAddedDesc']}</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">${title}</h3>
+            <p class="text-gray-500 mb-6">${description}</p>
             
             <div class="flex flex-col gap-2">
-                <button onclick="closeModal()" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition active:scale-95" data-i18n="ok">
+                <button onclick="closeModal()" class="w-full ${btnColor} text-white py-3 rounded-xl font-bold transition active:scale-95">
                     ${translations[currentLang]['ok']}
                 </button>
-                <button onclick="closeModal(); toggleCart();" class="w-full text-green-700 font-semibold py-2 text-sm hover:underline" data-i18n="viewCart">
+                ${!isDelete ? `
+                <button onclick="closeModal(); toggleCart();" class="w-full text-green-700 font-semibold py-2 text-sm hover:underline">
                     ${translations[currentLang]['viewCart']}
-                </button>
+                </button>` : ''}
             </div>
         </div>
     `;
-
     document.body.appendChild(overlay);
 }
 
@@ -567,4 +642,3 @@ function initScrollReveal() {
 
 // Run this when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initScrollReveal);
-
