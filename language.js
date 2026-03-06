@@ -247,7 +247,7 @@ const translations = {
         termsOfService: "सेवाका सर्तहरू",
         madeInNepal: 'नेपालको <i class=\'fas fa-heart text-red-500\'></i> मायाले बनेको',
         // hamburger menu
-        changeLanguage: "<i class='fas fa-globe'></i> भाषा परिवर्तन गर्नुहोस्",
+        changeLanguage: "<i class='fas fa-globe'></i> भाषा परिवर्तन गर्नुहोस्"
         // other ---
     }
 };
