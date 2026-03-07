@@ -182,6 +182,8 @@ function renderCart() {
     const list = document.getElementById('cart-items-list');
     const totalEl = document.getElementById('cart-total-price');
     const freeShippingThreshold = 2000;
+    // Select the footer container (the div with p-6 and border-t)
+    const cartFooter = document.querySelector('#cart-sidebar .p-6.border-t');
 
     // Reset list
     list.innerHTML = '';
@@ -189,10 +191,16 @@ function renderCart() {
 
     // 1. EMPTY STATE: Friendly "Back to Shop" UI
     if (cart.length === 0) {
+        // Hide the footer to prevent it from pushing the content up
+        if (cartFooter) cartFooter.classList.add('hidden');
         list.innerHTML = `
-            <div class="flex flex-col items-center justify-center py-12 px-6 text-center animate-pop">
-                <img src="empty-shopping-cart.jpg" alt="Empty Cart" class="w-48 h-48 mb-6 opacity-80">
-                <h3 class="text-lg font-bold text-gray-900 mb-2">
+            <div class="flex flex-col items-center justify-center h-full text-center px-4 animate-pop">
+                <div class="w-48 h-48 mb-6">
+                    <img src="empty-shopping-cart.jpg" 
+                         alt="Empty Cart" 
+                         class="w-full h-full object-contain pointer-events-none">
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
                     ${translations[currentLang]['cartEmptyTitle'] || "Your cart is empty"}
                 </h3>
                 <p class="text-gray-500 text-sm mb-8">
@@ -206,6 +214,10 @@ function renderCart() {
         totalEl.innerText = `Rs. 0`;
         return;
     }
+    // IMPORTANT: Show the footer and restore scrolling if there are items
+    if (cartFooter) cartFooter.classList.remove('hidden');
+    list.classList.add('overflow-y-auto');
+    list.classList.remove('overflow-hidden');
 
     // 2. Calculate Total first for the Progress Bar
     cart.forEach(item => total += (item.price * item.quantity));
