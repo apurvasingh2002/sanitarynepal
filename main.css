@@ -180,13 +180,3 @@ h1[data-i18n="sanitaryNepal"] {
 #lang-flag {
     aspect-ratio: 1 / 1;
 }
-#cart-items-list {
-    display: flex;
-    flex-direction: column;
-}
-
-/* This ensures that when the empty div is h-full, it actually
-   stretches to the bottom of the sidebar */
-#cart-items-list > div {
-    flex: 1 0 auto;
-}
