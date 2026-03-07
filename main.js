@@ -193,23 +193,53 @@ function renderCart() {
     if (cart.length === 0) {
         // Hide the footer to prevent it from pushing the content up
         if (cartFooter) cartFooter.classList.add('hidden');
+        // Remove scrolling during empty state to lock the image in place
+        list.classList.remove('overflow-y-auto');
+        list.classList.add('overflow-hidden');
         list.innerHTML = `
-            <div class="flex flex-col items-center justify-center h-full text-center px-4 animate-pop">
-                <div class="w-48 h-48 mb-6">
+            <div class="flex flex-col items-center justify-center h-full text-center px-6 animate-pop">
+                <div class="w-40 h-40 sm:w-48 sm:h-48 mb-6">
                     <img src="empty-shopping-cart.jpg" 
                          alt="Empty Cart" 
-                         class="w-full h-full object-contain pointer-events-none">
+                         class="w-full h-full object-contain pointer-events-none opacity-90">
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">
                     ${translations[currentLang]['cartEmptyTitle'] || "Your cart is empty"}
                 </h3>
-                <p class="text-gray-500 text-sm mb-8">
-                    ${translations[currentLang]['cartEmptyDesc'] || "Looks like you haven't added anything yet."}
+                <p class="text-gray-500 text-sm mb-8 max-w-[220px]">
+                    ${translations[currentLang]['cartEmptyDesc'] || "Looks like you haven't added anything yet. Explore our quality sanitary products!"}
                 </p>
-                <button onclick="toggleCart()" class="bg-green-600 text-white px-8 py-3 rounded-xl font-bold active:scale-95 transition">
+                <button onclick="toggleCart()" class="bg-green-600 text-white px-10 py-4 rounded-2xl font-bold active:scale-95 transition shadow-lg">
                     ${translations[currentLang]['startShopping'] || "Start Shopping"}
                 </button>
+               <div class="mt-10 w-full animate-fade-in-up">
+    <div class="flex items-center justify-between mb-4">
+        <span class="h-px bg-gray-200 flex-grow"></span>
+        <p class="px-3 text-[11px] font-black text-gray-400 uppercase tracking-[0.2em]">Quick Picks</p>
+        <span class="h-px bg-gray-200 flex-grow"></span>
+    </div>
+    
+    <div class="flex justify-center gap-4 px-2">
+        <button onclick="showShop('pad')" 
+                class="group relative flex-1 max-w-[120px] aspect-square bg-pink-50 rounded-3xl p-4 flex flex-col items-center justify-center border-2 border-white shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 shadow-inner group-hover:bg-pink-100 transition-colors">
+                <i class="fas fa-leaf text-2xl text-pink-500"></i>
             </div>
+            <span class="text-xs font-black text-pink-700 tracking-wide">Pads</span>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-pink-400 rounded-full border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </button>
+
+        <button onclick="showShop('diaper')" 
+                class="group relative flex-1 max-w-[120px] aspect-square bg-blue-50 rounded-3xl p-4 flex flex-col items-center justify-center border-2 border-white shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-3 shadow-inner group-hover:bg-blue-100 transition-colors">
+                <i class="fas fa-baby text-2xl text-blue-500"></i>
+            </div>
+            <span class="text-xs font-black text-blue-700 tracking-wide">Diapers</span>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </button>
+    </div>
+</div>
+            </div>        
         `;
         totalEl.innerText = `Rs. 0`;
         return;
