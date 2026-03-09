@@ -191,37 +191,60 @@
         </div>
     </div>
 </section>
-<section id="category-cards" class="py-16 container mx-auto px-4">
-    <h3 class="text-3xl font-bold text-center mb-12" data-i18n="categoryTitle">Our Product Categories</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-pink-100 rounded-3xl p-8 flex flex-col items-center text-center group hover:shadow-md transition">
-            <div class="h-48 mb-6 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400"
-                     alt="Pads" class="group-hover:scale-105 transition duration-300">
-            </div>
-            <h4 class="text-2xl font-bold mb-2" data-i18n="categoryPads">Sanitary Pads</h4>
+<section id="category-cards" class="py-16 container mx-auto px-5 overflow-x-hidden">
+    <h3 class="text-3xl lg:text-4xl font-black text-center mb-12 text-gray-800" data-i18n="categoryTitle">
+        Our Product Categories
+    </h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="animate-pop group relative cursor-pointer" onclick="showShop('pad'); window.scrollTo(0, 0);">
+            <div class="absolute inset-0 bg-pink-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
+            
+            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
+                        group-hover:shadow-2xl group-hover:-translate-y-4 transition-all duration-500 
+                        flex flex-col items-center text-center overflow-hidden h-full">
+                
+                <div class="h-56 mb-6 relative z-10">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400"
+                         alt="Pads" 
+                         class="h-full w-auto object-contain rounded-2xl transform group-hover:scale-110 group-hover:rotate-2 transition-transform duration-700 shadow-lg">
+                </div>
 
-            <p class="text-gray-600 mb-4" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
-            <button class="bg-white text-green-700 border-2 border-green-700 px-6 py-2 rounded-full font-bold hover:bg-green-700 hover:text-white transition"
-                    onclick="showShop('pad');
-                    window.scrollTo(0, 0);" data-i18n="shopPads">Shop Pads
-            </button>
+                <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryPads">Sanitary Pads</h4>
+                <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
+                
+                <button class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
+                               group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
+                    <span data-i18n="shopPads">Shop Pads</span>
+                </button>
+            </div>
         </div>
 
-        <div class="bg-blue-100 rounded-3xl p-8 flex flex-col items-center text-center group hover:shadow-md transition">
-            <div class="h-48 mb-6 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=400"
-                     alt="Diapers" class="group-hover:scale-105 transition duration-300">
-            </div>
-            <h4 class="text-2xl font-bold mb-2" data-i18n="categoryBabyDiapers">Baby Diapers</h4>
+        <div class="animate-pop group relative cursor-pointer" style="animation-delay: 0.1s" onclick="showShop('diaper')">
+            <div class="absolute inset-0 bg-blue-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
+            
+            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
+                        group-hover:shadow-2xl group-hover:-translate-y-4 transition-all duration-500 
+                        flex flex-col items-center text-center overflow-hidden h-full">
+                
+                <div class="h-56 mb-6 relative z-10">
+                    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=400"
+                         alt="Diapers" 
+                         class="h-full w-auto object-contain rounded-2xl transform group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-700 shadow-lg">
+                </div>
 
-            <p class="text-gray-600 mb-4" data-i18n="categoryDesc2">Dryness & Protection for Little Ones</p>
-            <button class="bg-white text-green-700 border-2 border-green-700 px-6 py-2 rounded-full font-bold hover:bg-green-700 hover:text-white transition"
-                    onclick="showShop('diaper')" data-i18n="shopDiapers">Shop Diapers
-            </button>
+                <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryBabyDiapers">Baby Diapers</h4>
+                <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc2">Dryness & Protection for Little Ones</p>
+                
+                <button class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
+                               group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
+                    <span data-i18n="shopDiapers">Shop Diapers</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>
+
 <section id="shop-section" class="hidden reveal py-10 bg-white min-h-screen">
     <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-8 gap-4">
