@@ -11,8 +11,13 @@ const translations = {
         navFAQ: "FAQ",
         navAboutOurMission: "About Our Mission",
         // hero section
-        heroTitle: "Your Trusted Partner for <br><span class='text-green-600'>Comfort & Care</span>",
-        heroDesc: "Quality Sanitary Pads & Diapers for Every Nepali Family. Stay confident and dry, every single day.",
+        heroTitle: "<h1 class='text-3xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter'>" +
+            "                    Don’t Just Wear It. <br/>" +
+            "                    <span class='text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500'>Feel the Relief.</span></h1>",
+        heroDesc: "<p class='text-gray-500 text-[12px] sm:text-lg mb-8 max-w-md leading-relaxed'>" +
+            "                Introducing the <b>World’s First Pain Relief Sanitary Pads</b>. Engineered in Korea with advanced\n" +
+            "                biotechnology to soothe cramps naturally while providing 100% leak-proof protection.\n" +
+            "            </p>",
         // featured section
         featuredTitle: "Best Sellers",
         featuredProducts: "Featured Products",
@@ -137,8 +142,11 @@ const translations = {
         navFAQ: "बारम्बार सोधिने प्रश्न",
         navAboutOurMission: "हाम्रो बारे मा",
         // hero section
-        heroTitle: "<span class='text-green-600' data-i18n='heroTitle2' style='line-height: 1.8;'>आराम र हेरचाहको लागि</span><br> तपाईंको विश्वसनीय साझेदार",
-        heroDesc: "हरेक नेपाली परिवारको लागि गुणस्तरीय स्यानिटरी प्याड र डायपर। हरेक दिन आत्मविश्वासी र सुख्खा रहनुहोस्।",
+        heroTitle: "<h1 class='text-2xl lg:text-5xl font-black text-gray-800 tracking-normal' style='line-height: 1.2'>" +
+            "                    दुखाइलाई बिर्सनुस्, <br/>" +
+            "                    <span class='text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500'>आफ्नो सहजतामा जिउनुस्।</span></h1>",
+        heroDesc: "<p class='text-gray-500 text-[12px] sm:text-lg mb-8 max-w-md leading-relaxed'>" +
+            "                कोरियामा विकसित विश्वकै पहिलो दुखाइ कम गर्ने प्याड। प्राकृतिक रूपमै महिनावारीको पीडाबाट आराम पाउनुहोस्।</p>",
         // featured section
         featuredTitle: "सर्वश्रेष्ठ बिक्रीहरू",
         featuredProducts: "विशेष सामानहरू",
@@ -259,7 +267,18 @@ translations.en.reOrder = "<i class='fas fa-redo-alt text-[10px]'></i> Re-order"
 translations.ne.reOrder = "<i class='fas fa-redo-alt text-[10px]'></i> पुन: खरिद गर्नुहोस्";
 translations.en.flag = "<img id='lang-flag' src='https://flagcdn.com/gb.svg' class='w-full h-full object-cover' alt='British Flag'>";
 translations.ne.flag = "<img id='lang-flag' src='https://flagcdn.com/np.svg' class='w-full h-full object-cover' alt='Nepal Flag'>";
-
+translations.en.addedToCart = "Added To Cart!";
+translations.ne.addedToCart = "कार्टमा थपियो!";
+translations.en.pads = "pads";
+translations.ne.pads = "प्याड"
+translations.en.diapers = "Diapers";
+translations.ne.diapers = "डायपर";
+translations.en.quickPicks = "Quick Picks";
+translations.ne.quickPicks = "द्रुत छनोटहरू";
+translations.en.koreanTech = "<i class='fas fa-microchip mr-1'></i>Korean Innovation";
+translations.ne.koreanTech = "<i class='fas fa-microchip mr-1'></i>कोरियाली प्रविधि";
+translations.en.worldsFirst = "World First";
+translations.ne.worldsFirst = "संसारको पहिलो";
 let currentLang = 'en'; // Default language
 function toggleLanguage() {
     currentLang = (currentLang === 'en') ? 'ne' : 'en';
@@ -270,7 +289,7 @@ function toggleLanguage() {
     // Parse the string into a new Document object
     const doc = parser.parseFromString(htmlString, 'text/html');
     const langBtn = document.getElementById('lang-btn');
-    langBtn.innerHTML ="";
+    langBtn.innerHTML = "";
     langBtn.appendChild(doc.body);
 
     // Update all text elements on the page
