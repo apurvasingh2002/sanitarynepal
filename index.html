@@ -197,7 +197,7 @@
     </h3>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="animate-pop group relative cursor-pointer" onclick="showShop('pad'); window.scrollTo(0, 0);">
+        <div class="animate-pop group relative cursor-pointer">
             <div class="absolute inset-0 bg-pink-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
             
             <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
@@ -213,14 +213,15 @@
                 <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryPads">Sanitary Pads</h4>
                 <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
                 
-                <button class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
+                <button onclick="showShop('pad')"
+                    class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
                                group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
                     <span data-i18n="shopPads">Shop Pads</span>
                 </button>
             </div>
         </div>
 
-        <div class="animate-pop group relative cursor-pointer" style="animation-delay: 0.1s" onclick="showShop('diaper')">
+        <div class="animate-pop group relative cursor-pointer" style="animation-delay: 0.1s">
             <div class="absolute inset-0 bg-blue-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
             
             <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
@@ -236,7 +237,8 @@
                 <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryBabyDiapers">Baby Diapers</h4>
                 <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc2">Dryness & Protection for Little Ones</p>
                 
-                <button class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
+                <button onclick="showShop('diaper')"
+                    class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
                                group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
                     <span data-i18n="shopDiapers">Shop Diapers</span>
                 </button>
