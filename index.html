@@ -191,57 +191,59 @@
         </div>
     </div>
 </section>
-<section id="category-cards" class="py-16 container mx-auto px-5 overflow-x-hidden">
-    <h3 class="text-3xl lg:text-4xl font-black text-center mb-12 text-gray-800" data-i18n="categoryTitle">
+<section id="category-cards" class="py-24 container mx-auto px-5 overflow-x-hidden">
+    <h3 class="text-3xl lg:text-4xl font-black text-center mb-20 text-gray-800" data-i18n="categoryTitle">
         Our Product Categories
     </h3>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="animate-pop group relative cursor-pointer">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-12">
+        <div class="animate-pop group relative cursor-pointer pt-12" onclick="showShop('pad')">
             <div class="absolute inset-0 bg-pink-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
             
-            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
+            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 pb-10 rounded-[2.5rem] shadow-sm 
                         group-hover:shadow-2xl group-hover:-translate-y-4 transition-all duration-500 
-                        flex flex-col items-center text-center overflow-hidden h-full">
+                        flex flex-col items-center text-center h-full">
                 
-                <div class="h-56 mb-6 relative z-10">
+                <div class="relative -mt-24 mb-6 w-full flex justify-center h-64 sm:h-72">
                     <img src="category-pad.PNG"
                          alt="Pads" 
-                         class="h-full w-auto object-contain rounded-2xl transform group-hover:scale-110 group-hover:rotate-2 transition-transform duration-700 shadow-lg">
+                         class="h-full w-auto object-contain drop-shadow-2xl transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700">
                 </div>
 
-                <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryPads">Sanitary Pads</h4>
-                <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
-                
-                <button onclick="showShop('pad')"
-                    class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
-                               group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
-                    <span data-i18n="shopPads">Shop Pads</span>
-                </button>
+                <div class="mt-auto">
+                    <h4 class="text-3xl font-black text-gray-800 mb-2" data-i18n="categoryPads">Sanitary Pads</h4>
+                    <p class="text-gray-500 font-medium mb-8 text-lg" data-i18n="categoryDesc1">Stay Comfortable & Confident</p>
+                    
+                    <button class="w-full sm:w-auto bg-green-700 text-white px-10 py-4 rounded-2xl font-black 
+                                   hover:bg-green-800 transition-all duration-300 shadow-lg active:scale-95">
+                        <span data-i18n="shopPads">Shop Pads</span>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="animate-pop group relative cursor-pointer" style="animation-delay: 0.1s">
+        <div class="animate-pop group relative cursor-pointer pt-12" style="animation-delay: 0.1s" onclick="showShop('diaper')">
             <div class="absolute inset-0 bg-blue-100/60 rounded-[3rem] transform group-hover:scale-105 transition-all duration-500 blur-sm"></div>
             
-            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 rounded-[2.5rem] shadow-sm 
+            <div class="relative bg-white/70 backdrop-blur-md border border-white p-8 pb-10 rounded-[2.5rem] shadow-sm 
                         group-hover:shadow-2xl group-hover:-translate-y-4 transition-all duration-500 
-                        flex flex-col items-center text-center overflow-hidden h-full">
+                        flex flex-col items-center text-center h-full">
                 
-                <div class="h-56 mb-6 relative z-10">
+                <div class="relative -mt-24 mb-6 w-full flex justify-center h-64 sm:h-72">
                     <img src="category-diaper.PNG"
                          alt="Diapers" 
-                         class="h-full w-auto object-contain rounded-2xl transform group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-700 shadow-lg">
+                         class="h-full w-auto object-contain drop-shadow-2xl transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-700">
                 </div>
 
-                <h4 class="text-2xl font-black text-gray-800 mb-2" data-i18n="categoryBabyDiapers">Baby Diapers</h4>
-                <p class="text-gray-500 font-medium mb-6" data-i18n="categoryDesc2">Dryness & Protection for Little Ones</p>
-                
-                <button onclick="showShop('diaper')"
-                    class="w-full sm:w-auto bg-white text-green-700 border-2 border-green-700 px-8 py-3 rounded-2xl font-black 
-                               group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-md active:scale-95">
-                    <span data-i18n="shopDiapers">Shop Diapers</span>
-                </button>
+                <div class="mt-auto">
+                    <h4 class="text-3xl font-black text-gray-800 mb-2" data-i18n="categoryBabyDiapers">Baby Diapers</h4>
+                    <p class="text-gray-500 font-medium mb-8 text-lg" data-i18n="categoryDesc2">Dryness & Protection for Little Ones</p>
+                    
+                    <button class="w-full sm:w-auto bg-green-700 text-white px-10 py-4 rounded-2xl font-black 
+                                   hover:bg-green-800 transition-all duration-300 shadow-lg active:scale-95">
+                        <span data-i18n="shopDiapers">Shop Diapers</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
