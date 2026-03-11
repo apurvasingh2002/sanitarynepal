@@ -1,350 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanitary Nepal | Comfort & Care</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="main.js"></script>
-  <script src="language.js"></script>
-  <script src="login.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');    </style>
-  <link href="main.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Nepal | Comfort & Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
+    <script src="language.js"></script>
+    <script src="login.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');    </style>
+    <link href="main.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 <div id="offer-banner"
      class="bg-gray-800 text-white py-1 px-4 text-center text-sm font-medium w-full relative z-[110]">
-  <p data-i18n="offerTitle"><i class="fas fa-truck-moving mr-2"></i> Free delivery on orders over Rs. 2,000!</p>
+    <p data-i18n="offerTitle"><i class="fas fa-truck-moving mr-2"></i> Free delivery on orders over Rs. 2,000!</p>
 </div>
 <header class="sticky top-0 w-full bg-white shadow-sm z-[105]">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center flex-nowrap gap-2 ">
-    <div class="flex items-center gap-2 flex-shrink-0 rounded hover:cursor-pointer" onclick="location.reload()">
-      <div class="h-8 w-8 sm:h-10 sm:w-auto flex-shrink-0">
-        <img src="logo.jpg" class="h-full w-auto object-contain"/>
-      </div>
-      <h1 class="text-lg sm:text-2xl font-bold text-gray-900 tracking-tight whitespace-nowrap"
-          data-i18n="sanitaryNepal">
-        Sanitary <span class="text-green-600">Nepal</span>
-      </h1>
-    </div>
-    <nav id="main-nav" class="hidden md:flex items-center space-x-8 font-bold">
-      <a href="index.html"
-         class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
-         data-i18n="navHome">
-        Home
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
-      </a>
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center flex-nowrap gap-2 ">
+        <div class="flex items-center gap-2 flex-shrink-0 rounded hover:cursor-pointer" onclick="location.reload()">
+            <div class="h-8 w-8 sm:h-10 sm:w-auto flex-shrink-0">
+                <img src="logo.jpg" class="h-full w-auto object-contain"/>
+            </div>
+            <h1 class="text-lg sm:text-2xl font-bold text-gray-900 tracking-tight whitespace-nowrap"
+                data-i18n="sanitaryNepal">
+                Sanitary <span class="text-green-600">Nepal</span>
+            </h1>
+        </div>
+        <nav id="main-nav" class="hidden md:flex items-center space-x-8 font-bold">
+            <a href="index.html"
+               class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
+               data-i18n="navHome">
+                Home
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
+            </a>
 
-      <a href="shop.html"
-         class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
-         data-i18n="navShop">
-        Shop
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
-      </a>
+            <a href="shop.html"
+               class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
+               data-i18n="navShop">
+                Shop
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
+            </a>
 
-      <a href="about.html"
-         class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
-         data-i18n="navAbout">
-        About
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
-      </a>
+            <a href="about.html"
+               class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
+               data-i18n="navAbout">
+                About
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
+            </a>
 
-      <a href="contact.html"
-         class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
-         data-i18n="navContact">
-        Contact
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
-      </a>
-      <a href="faq.html"
-         class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
-         data-i18n="navContact">
-        FAQ
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
-      </a>
-    </nav>
+            <a href="contact.html"
+               class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
+               data-i18n="navContact">
+                Contact
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
+            </a>
+            <a href="faq.html"
+               class="nav-link relative py-2 text-gray-600 hover:text-green-600 transition-colors duration-300 group"
+               data-i18n="navContact">
+                FAQ
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full active-underline"></span>
+            </a>
+        </nav>
 
-    <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0 ">
-      <button onclick="toggleLanguage()" id="lang-btn"
-              title="Switch Language"
-              class="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 overflow-hidden hover:border-green-600 hover:scale-110 transition-all active:scale-90">
-        <img id="lang-flag" src="https://flagcdn.com/np.svg" class="w-full h-full object-cover"
-             alt="Nepal Flag">
-      </button>
-      <button onclick="openLoginModal()" id="login-btn"
-              class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-gray-700
+        <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0 ">
+            <button onclick="toggleLanguage()" id="lang-btn"
+                    title="Switch Language"
+                    class="w-6 h-6 flex items-center justify-center rounded-full border border-gray-200 overflow-hidden hover:border-green-600 hover:scale-110 transition-all active:scale-90">
+                <img id="lang-flag" src="https://flagcdn.com/np.svg" class="w-full h-full object-cover"
+                     alt="Nepal Flag">
+            </button>
+            <button onclick="openLoginModal()" id="login-btn"
+                    class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-gray-700
                                 hover:bg-green-50 hover:text-green-600 transition-all hover:scale-110">
-        <i class="fas fa-user-circle text-xl sm:text-2xl"></i>
-      </button>
+                <i class="fas fa-user-circle text-xl sm:text-2xl"></i>
+            </button>
 
-      <div class="relative">
-        <button id="shopping-cart-logo" onclick="toggleCart()"
-                class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition text-red-500 hover:text-green-600 hover:scale-110">
-          <i class="fas fa-shopping-cart text-lg sm:text-xl"></i>
-          <span id="cart-badge"
-                class="absolute top-0 right-0 sm:top-1 sm:right-1 bg-red-500 text-white text-[9px] sm:text-[10px] font-bold w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center hidden">
+            <div class="relative">
+                <button id="shopping-cart-logo" onclick="toggleCart()"
+                        class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center transition text-red-500 hover:text-green-600 hover:scale-110">
+                    <i class="fas fa-shopping-cart text-lg sm:text-xl"></i>
+                    <span id="cart-badge"
+                          class="absolute top-0 right-0 sm:top-1 sm:right-1 bg-red-500 text-white text-[9px] sm:text-[10px] font-bold w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full flex items-center justify-center hidden">
                         0
                     </span>
-        </button>
-      </div>
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 <button onclick="toggleMobileMenu()"
         class="md:hidden fixed top-22 right-2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center
         justify-center z-[110] border border-gray-100 text-gray-800 active:scale-95 transition-transform">
-  <i class="fas fa-bars"></i>
+    <i class="fas fa-bars"></i>
 </button>
-<section id="contact-section" class="py-24 bg-white overflow-hidden">
-  <div class="container mx-auto px-6">
+<section id="contact-section" class="py-6 lg:py-24 bg-white overflow-hidden">
+    <div class="container mx-auto px-6">
 
-    <div class="text-center mb-20">
-      <span class="text-green-600 font-black uppercase tracking-[0.3em] text-[10px]" data-i18n="contactTag">Get In Touch</span>
-      <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mt-4 tracking-tighter" data-i18n="contactTitle">How can we <span class="text-green-600">help?</span></h2>
-      <div class="w-16 h-1 bg-green-500 mx-auto mt-6 rounded-full opacity-20"></div>
+        <div class="text-center mb-10 lg:mb-20">
+            <span class="text-gray-600 font-black uppercase tracking-[0.3em] text-[12px]" data-i18n="contactTitle">Get In <span class='text-green-600'>Touch</span></span>
+            <h2 class="text-sm lg:text-xl normal-case text-gray-800 mt-4 tracking-tighter" data-i18n="contactDesc">Have a question about our
+                products or interested in wholesale/bulk orders? <br>Send us a message and our team will get back to you within 24 hours.</h2>
+            <div class="w-16 h-1 bg-green-500 mx-auto mt-6 rounded-full opacity-20"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+            <div class="lg:col-span-7 animate-pop">
+                <div class="bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl shadow-sm hover:shadow-md transition-all duration-500">
+                    <form id="bulkInquiryForm" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest"
+                                       data-i18n="contactName">Full Name</label>
+                                <input type="text" placeholder="Enter your name"
+                                       class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium">
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest"
+                                       data-i18n="contactPhone">Phone Number</label>
+                                <input type="tel" placeholder="+977-98..."
+                                       class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest"
+                                   data-i18n="contactMessage">Message/Inquiry</label>
+                            <textarea rows="4" placeholder="Tell us what you need..."
+                                      class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium"></textarea>
+                        </div>
+
+                        <button type="button" onclick="alert('Inquiry Sent Successfully!')"
+                                class="w-full bg-green-700 text-white py-4 rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-green-700/10 hover:bg-green-800 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
+                                data-i18n="contactSendInquiry">
+                            Send Message <i class="fas fa-paper-plane ml-2 text-xs opacity-70"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-6">
+
+                <div class="h-[300px] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm animate-pop"
+                     style="animation-delay: 0.1s">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112344.40618063063!2d81.564771!3d28.058309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39987f6517a93541%3A0xc6e466e34a621183!2sNepalgunj!5e0!3m2!1sen!2snp!4v1710000000000!5m2!1sen!2snp"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-pop" style="animation-delay: 0.2s">
+                    <div class="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 flex items-center gap-4 group hover:bg-white hover:shadow-md transition-all">
+                        <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center text-green-700 group-hover:bg-green-600 group-hover:text-white transition-all">
+                            <i class="fas fa-map-pin"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest"
+                               data-i18n="contactMapTitle">Office</p>
+                            <p class="text-xs font-bold text-gray-800" data-i18n="contactMapAddress">Nepalgunj,
+                                Banke</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 flex items-center gap-4 group hover:bg-white hover:shadow-md transition-all">
+                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest"
+                               data-i18n="contactMapHours">Opening Hours</p>
+                            <p class="text-xs font-bold text-gray-800" data-i18n="contactMapOpeningTime">Sun-Fri:
+                                9-6</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-
-      <div class="lg:col-span-7 animate-pop">
-        <div class="bg-white border border-gray-100 p-8 lg:p-10 rounded-2xl shadow-sm hover:shadow-md transition-all duration-500">
-          <form id="bulkInquiryForm" class="space-y-5">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div class="space-y-1.5">
-                <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest" data-i18n="contactName">Full Name</label>
-                <input type="text" placeholder="Enter your name" class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium">
-              </div>
-
-              <div class="space-y-1.5">
-                <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest" data-i18n="contactPhone">Phone Number</label>
-                <input type="tel" placeholder="+977-98..." class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium">
-              </div>
-            </div>
-
-            <div class="space-y-1.5">
-              <label class="text-[10px] font-black text-gray-400 uppercase ml-1 tracking-widest" data-i18n="contactMessage">Message/Inquiry</label>
-              <textarea rows="4" placeholder="Tell us what you need..." class="w-full px-5 py-3.5 bg-gray-50/50 border border-gray-100 rounded-xl focus:bg-white focus:ring-1 focus:ring-green-500 transition-all outline-none text-sm font-medium"></textarea>
-            </div>
-
-            <button type="button" onclick="alert('Inquiry Sent Successfully!')"
-                    class="w-full bg-green-700 text-white py-4 rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-green-700/10 hover:bg-green-800 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
-                    data-i18n="contactSendInquiry">
-              Send Message <i class="fas fa-paper-plane ml-2 text-xs opacity-70"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 space-y-6">
-
-        <div class="h-[300px] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm animate-pop" style="animation-delay: 0.1s">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112344.40618063063!2d81.564771!3d28.058309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39987f6517a93541%3A0xc6e466e34a621183!2sNepalgunj!5e0!3m2!1sen!2snp!4v1710000000000!5m2!1sen!2snp"
-                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-pop" style="animation-delay: 0.2s">
-          <div class="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 flex items-center gap-4 group hover:bg-white hover:shadow-md transition-all">
-            <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center text-green-700 group-hover:bg-green-600 group-hover:text-white transition-all">
-              <i class="fas fa-map-pin"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest" data-i18n="contactMapTitle">Office</p>
-              <p class="text-xs font-bold text-gray-800" data-i18n="contactMapAddress">Nepalgunj, Banke</p>
-            </div>
-          </div>
-
-          <div class="bg-gray-50/50 p-6 rounded-2xl border border-gray-100 flex items-center gap-4 group hover:bg-white hover:shadow-md transition-all">
-            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-all">
-              <i class="fas fa-clock"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest" data-i18n="contactMapHours">Hours</p>
-              <p class="text-xs font-bold text-gray-800" data-i18n="contactMapOpeningTime">Sun-Fri: 9-6</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
 </section>
 <footer class="relative bg-[#0a0f0d] text-gray-400 pt-12 pb-6 overflow-hidden">
-  <div class="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-[120px]"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-[120px]"></div>
 
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-10">
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-10">
 
-      <div class="space-y-8">
-        <div>
-          <h2 class="text-white text-3xl font-black tracking-tighter">
-            <span data-i18n="sanitary">Sanitary</span>
-            <span class="text-green-500" data-i18n="nepal">Nepal</span>
-          </h2>
-          <div class="w-12 h-1 bg-green-500 mt-2 rounded-full"></div>
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-white text-3xl font-black tracking-tighter">
+                        <span data-i18n="sanitary">Sanitary</span>
+                        <span class="text-green-500" data-i18n="nepal">Nepal</span>
+                    </h2>
+                    <div class="w-12 h-1 bg-green-500 mt-2 rounded-full"></div>
+                </div>
+
+                <p class="text-base leading-relaxed opacity-80" data-i18n="footerDesc">
+                    Providing high-quality, affordable hygiene solutions for families across Nepal. Committed to
+                    comfort, care, and sustainability through Korean innovation.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="#"
+                       class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-green-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#"
+                       class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#"
+                       class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black mb-8 uppercase tracking-[0.2em] text-xs" data-i18n="quickLinks">Quick
+                    Links</h4>
+                <ul class="space-y-5">
+                    <li><a href="index.html"
+                           class="hover:text-green-400 transition-colors flex items-center gap-2 group"
+                           data-i18n="navHome">
+                        <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Home</a>
+                    </li>
+                    <li><a href="shop.html?category=all"
+                           class="hover:text-green-400 transition-colors flex items-center gap-2 group"
+                           data-i18n="shopProducts">
+                        <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Shop Products</a>
+                    </li>
+                    <li><a href="about.html"
+                           class="hover:text-green-400 transition-colors flex items-center gap-2 group"
+                           data-i18n="footerAbout">
+                        <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Our Mission</a>
+                    </li>
+                    <li><a href="faq.html" class="hover:text-green-400 transition-colors flex items-center gap-2 group"
+                           data-i18n="navFAQ">
+                        <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> FAQs</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black mb-8 uppercase tracking-[0.2em] text-xs" data-i18n="categories">
+                    Categories</h4>
+                <ul class="space-y-5">
+                    <li><a href="shop.html?category=pad" class="hover:text-pink-400 transition-colors"
+                           data-i18n="categoryPads">Sanitary Pads</a></li>
+                    <li><a href="shop.html?category=diaper" class="hover:text-blue-400 transition-colors"
+                           data-i18n="categoryBabyDiapers">Baby Diapers</a></li>
+                    <li><a href="shop.html?category=all" class="hover:text-green-400 transition-colors"
+                           data-i18n="maternityCare">Maternity Care</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400 transition-colors" data-i18n="bulkOrders">Bulk
+                        Orders</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 shadow-2xl">
+                <h4 class="text-white font-black mb-6 uppercase tracking-[0.2em] text-xs" data-i18n="footerContact">Get
+                    in Touch</h4>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span class="text-sm leading-snug" data-i18n="footerAddress">Nepalgunj, Banke,<br> Nepal</span>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <span class="text-sm font-bold text-white tracking-wide" data-i18n="footerMobile">+977 9858059157</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <p class="text-base leading-relaxed opacity-80" data-i18n="footerDesc">
-          Providing high-quality, affordable hygiene solutions for families across Nepal. Committed to
-          comfort, care, and sustainability through Korean innovation.
-        </p>
+        <div class="border-t border-white/5 pt-5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-bold tracking-widest uppercase opacity-60">
+            <p data-i18n="allRightsReserved">&copy; 2026 Sanitary Nepal. Quality First.</p>
 
-        <div class="flex gap-4">
-          <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-green-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
-            <i class="fab fa-facebook-f text-lg"></i>
-          </a>
-          <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
-            <i class="fab fa-instagram text-lg"></i>
-          </a>
-          <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-xl">
-            <i class="fab fa-whatsapp text-lg"></i>
-          </a>
+            <div class="flex gap-10">
+                <a href="#" class="hover:text-white transition-colors" data-i18n="privacyPolicy">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors" data-i18n="termsOfService">Terms</a>
+            </div>
+
+            <p class="flex items-center gap-2">
+                Proudly <i class="fas fa-heart text-red-500 animate-pulse"></i> In Nepal
+            </p>
         </div>
-      </div>
-
-      <div>
-        <h4 class="text-white font-black mb-8 uppercase tracking-[0.2em] text-xs" data-i18n="quickLinks">Quick Links</h4>
-        <ul class="space-y-5">
-          <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-green-400 transition-colors flex items-center gap-2 group" data-i18n="navHome">
-            <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Home</a>
-          </li>
-          <li><a href="javascript:void(0)" onclick="showShop('all'); window.scrollTo(0, 0);" class="hover:text-green-400 transition-colors flex items-center gap-2 group" data-i18n="shopProducts">
-            <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Shop Products</a>
-          </li>
-          <li><a href="javascript:void(0)" onclick="navigateTo('about-section')" class="hover:text-green-400 transition-colors flex items-center gap-2 group" data-i18n="footerAbout">
-            <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> Our Mission</a>
-          </li>
-          <li><a href="javascript:void(0)" onclick="navigateTo('faq-section')" class="hover:text-green-400 transition-colors flex items-center gap-2 group" data-i18n="navFAQ">
-            <span class="w-0 group-hover:w-2 h-0.5 bg-green-400 transition-all"></span> FAQs</a>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-white font-black mb-8 uppercase tracking-[0.2em] text-xs" data-i18n="categories">Categories</h4>
-        <ul class="space-y-5">
-          <li><a href="javascript:void(0)" onclick="showShop('pad'); window.scrollTo(0, 0);" class="hover:text-pink-400 transition-colors" data-i18n="categoryPads">Sanitary Pads</a></li>
-          <li><a href="javascript:void(0)" onclick="showShop('diaper'); window.scrollTo(0, 0);" class="hover:text-blue-400 transition-colors" data-i18n="categoryBabyDiapers">Baby Diapers</a></li>
-          <li><a href="javascript:void(0)" onclick="showShop('all'); window.scrollTo(0, 0);" class="hover:text-green-400 transition-colors" data-i18n="maternityCare">Maternity Care</a></li>
-          <li><a href="javascript:void(0)" onclick="navigateTo('contact-section')" class="hover:text-emerald-400 transition-colors" data-i18n="bulkOrders">Bulk Orders</a></li>
-        </ul>
-      </div>
-
-      <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 shadow-2xl">
-        <h4 class="text-white font-black mb-6 uppercase tracking-[0.2em] text-xs" data-i18n="footerContact">Get in Touch</h4>
-        <ul class="space-y-6">
-          <li class="flex items-start gap-4 group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <span class="text-sm leading-snug" data-i18n="footerAddress">Nepalgunj, Banke,<br>Lumbini, Nepal</span>
-          </li>
-          <li class="flex items-center gap-4 group">
-            <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <span class="text-sm font-bold text-white tracking-wide" data-i18n="footerMobile">+977 9858059157</span>
-          </li>
-        </ul>
-      </div>
     </div>
-
-    <div class="border-t border-white/5 pt-5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] font-bold tracking-widest uppercase opacity-60">
-      <p data-i18n="allRightsReserved">&copy; 2026 Sanitary Nepal. Quality First.</p>
-
-      <div class="flex gap-10">
-        <a href="#" class="hover:text-white transition-colors" data-i18n="privacyPolicy">Privacy</a>
-        <a href="#" class="hover:text-white transition-colors" data-i18n="termsOfService">Terms</a>
-      </div>
-
-      <p class="flex items-center gap-2">
-        Proudly <i class="fas fa-heart text-red-500 animate-pulse"></i> In Nepal
-      </p>
-    </div>
-  </div>
 </footer>
 <div id="cart-sidebar"
      class="fixed top-0 right-0 h-full w-80 md:w-96 bg-white shadow-2xl z-[200]
     transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
-  <div class="p-2 border-b flex justify-between items-center bg-green-50">
-    <h3 class="text-xl font-bold text-green-800" data-i18n="cartTitle"><i
-            class="fas fa-shopping-basket mr-2"></i> Your Cart</h3>
-    <button onclick="toggleCart()" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
-  </div>
-  <div id="cart-items-list" class="flex-grow overflow-y-auto p-2 space-y-4">
-  </div>
-  <div class="p-6 border-t bg-gray-50">
-    <div class="mb-4">
-      <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2"
-             data-i18n="deliveryNotes">Delivery Notes / Instructions</label>
-      <textarea id="cart-notes" rows="2"
-                class="w-full px-3 py-2 text-sm border rounded-xl focus:ring-1 focus:ring-green-600 focus:outline-none resize-none"
-                placeholder="Landmarks, gate codes, or delivery time preferences..."></textarea>
+    <div class="p-2 border-b flex justify-between items-center bg-green-50">
+        <h3 class="text-xl font-bold text-green-800" data-i18n="cartTitle"><i
+                class="fas fa-shopping-basket mr-2"></i> Your Cart</h3>
+        <button onclick="toggleCart()" class="text-gray-500 hover:text-red-500 text-3xl">&times;</button>
     </div>
-    <div class="flex justify-between mb-4 text-lg font-bold">
-      <span>Total:</span>
-      <span id="cart-total-price" class="text-green-700">Rs. 0</span>
+    <div id="cart-items-list" class="flex-grow overflow-y-auto p-2 space-y-4">
     </div>
-    <button onclick="checkoutWhatsApp()"
-            class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition flex items-center justify-center gap-2 shadow-lg"
-            data-i18n="checkoutBtn">
-      <i class="fab fa-whatsapp"></i> Order via WhatsApp
-    </button>
-    <button onclick="toggleCart()"
-            class="w-full text-gray-500 text-sm font-semibold hover:text-green-600 transition"
-            data-i18n="keepShopping">
-      <i class="fas fa-arrow-left mr-1"></i> Keep Shopping
-    </button>
-    <p class="text-[10px] text-gray-400 text-center mt-3 uppercase tracking-widest"
-       data-i18n="cashOnDelivery">Cash on Delivery Available</p>
-  </div>
+    <div class="p-6 border-t bg-gray-50">
+        <div class="mb-4">
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2"
+                   data-i18n="deliveryNotes">Delivery Notes / Instructions</label>
+            <textarea id="cart-notes" rows="2"
+                      class="w-full px-3 py-2 text-sm border rounded-xl focus:ring-1 focus:ring-green-600 focus:outline-none resize-none"
+                      placeholder="Landmarks, gate codes, or delivery time preferences..."></textarea>
+        </div>
+        <div class="flex justify-between mb-4 text-lg font-bold">
+            <span>Total:</span>
+            <span id="cart-total-price" class="text-green-700">Rs. 0</span>
+        </div>
+        <button onclick="checkoutWhatsApp()"
+                class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition flex items-center justify-center gap-2 shadow-lg"
+                data-i18n="checkoutBtn">
+            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+        </button>
+        <button onclick="toggleCart()"
+                class="w-full text-gray-500 text-sm font-semibold hover:text-green-600 transition"
+                data-i18n="keepShopping">
+            <i class="fas fa-arrow-left mr-1"></i> Keep Shopping
+        </button>
+        <p class="text-[10px] text-gray-400 text-center mt-3 uppercase tracking-widest"
+           data-i18n="cashOnDelivery">Cash on Delivery Available</p>
+    </div>
 </div>
 <div id="mobile-menu-overlay" onclick="toggleMobileMenu()"
-     class="fixed inset-0 bg-black/40 z-[290] hidden backdrop-blur-sm"></div>
+     class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[250] transition-opacity duration-300 opacity-0"></div>
 <div id="mobile-menu-sidebar"
-     class="fixed top-0 left-0 w-[280px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-100">
-  <div class="p-6 flex flex-col h-full">
-    <div class="flex justify-between items-center mb-10">
-      <div class="text-xl font-bold text-gray-900" data-i18n="sanitaryNepal">Sanitary <span
-              class="text-green-600">Nepal</span></div>
-      <button onclick="toggleMobileMenu()" class="text-3xl text-gray-300 hover:text-red-500">&times;</button>
+     class="fixed top-0 left-0 w-[300px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full
+     transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) border-r border-gray-100">
+
+    <div class="p-8 flex flex-col h-full bg-gradient-to-b from-white via-white to-green-50/30">
+        <div class="flex justify-between items-center mb-12">
+            <div class="text-2xl font-black text-gray-900 tracking-tighter">
+                Sanitary <span class="text-green-600">Nepal</span>
+            </div>
+            <button onclick="toggleMobileMenu()"
+                    class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 transition-all">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav-links" class="flex flex-col gap-2">
+            <a href="index.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navHome">Home</span>
+            </a>
+
+            <a href="shop.html?category=all" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navShop">Shop</span>
+            </a>
+
+            <a href="about.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navAbout">About</span>
+            </a>
+
+            <a href="contact.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navContact">Contact</span>
+            </a>
+            <a href="faq.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navContact">FAQ</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-8 border-t border-gray-100">
+            <button onclick="toggleLanguage()"
+                    class="w-full py-4 bg-gray-900 rounded-2xl text-xs font-black text-white uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl active:scale-95 transition-all">
+                <i class="fas fa-globe text-green-500"></i> <span data-i18n="changeLanguage">Change Language</span>
+            </button>
+            <p class="mt-6 text-[10px] text-center text-gray-400 font-bold uppercase tracking-[0.3em]">Version - 1.0</p>
+        </div>
     </div>
-
-    <nav class="flex flex-col gap-1 text-base font-semibold text-gray-600">
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('home')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-home text-green-600 w-6"></i> <span data-i18n="navHome">Home</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            showShop('all')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-shopping-bag text-green-600 w-6"></i> <span data-i18n="navShop">Shop</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('about-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-info-circle text-green-600 w-6"></i> <span data-i18n="navAbout">About</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('contact-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-envelope text-green-600 w-6"></i> <span data-i18n="navContact">Contact</span>
-      </a>
-    </nav>
-
-    <div class="mt-auto space-y-4">
-      <button onclick="toggleLanguage()"
-              class="w-full py-3 bg-gray-50 rounded-xl text-sm font-bold text-gray-700 flex items-center justify-center gap-2"
-              data-i18n="changeLanguage">
-        <i class="fas fa-globe"></i> भाषा परिवर्तन गर्नुहोस्
-      </button>
-
-      <p class="text-[10px] text-center text-gray-400 uppercase tracking-widest">v1.0 • Nepalgunj, Nepal</p>
-    </div>
-  </div>
 </div>
 <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black opacity-50 z-[190] hidden"></div>
 <div id="toast-container" class="fixed top-5 right-5 z-[200] flex flex-col gap-3"></div>
 <button id="scrollTopBtn" onclick="scrollToTop()"
         class="fixed bottom-8 right-2 w-12 h-12 bg-green-600 text-white rounded-full shadow-2xl flex items-center justify-center z-[150] opacity-0 translate-y-10 transition-all duration-300 hover:bg-green-700 active:scale-95">
-  <i class="fas fa-arrow-up"></i>
+    <i class="fas fa-arrow-up"></i>
 </button>
 </body>
 </html>
