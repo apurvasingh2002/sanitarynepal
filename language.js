@@ -26,12 +26,13 @@ const translations = {
         featured3Title: "Bulk Deal",
         // about section
         aboutTitle: "Our Mission for Hygiene",
-        aboutDesc: "At <Strong>Sanitary Nepal</Strong> , we believe that access to high-quality hygiene\n" +
-            "                products is a fundamental right. Founded in Kathmandu, we are dedicated to providing affordable,\n" +
-            "                eco-friendly, and reliable sanitary pads and baby diapers to families across the nation.",
+        aboutDesc: "At <Strong>Sanitary Nepal</Strong> ,we believe high-quality hygiene isn't just a luxury, it's a fundamental right. " +
+            "We bridge the gap between <span class='text-green-600''>advanced Korean technology</span> and everyday Nepali life.",
+        aboutSince: "Since 2026",
         aboutList1: "Dermatologically Tested Products",
         aboutList2: "Sustainable & Biodegradable Options",
         aboutList3: "Fast Delivery to all 7 provinces",
+        aboutList4: "Community Focused",
         // category-cards section
         categoryTitle: "Our Product Categories",
         categoryDesc1: "Stay Comfortable & Confident",
@@ -40,7 +41,8 @@ const translations = {
         categoryPads: "Sanitary Pads",
         // shop section
         shopBack: "Back",
-        shopSortFeatured: "Sort by: Featured",
+        shopSortFeatured: "Sort By: Featured",
+        shopSorDefault: "Sort By: Default",
         shopSortLowToHigh: "Price: Low to High",
         shopSortHighToLow: "Price: High to Low",
         shopAllProducts: "All Products",
@@ -49,8 +51,8 @@ const translations = {
         addToCart: "Add to Cart",
         noProducts: "No products found matching your criteria.",
         // contact section
-        contactTitle: "Get In Touch",
-        contactDesc: "Have a question about our products or interested in wholesale/bulk orders?\n" +
+        contactTitle: "Get In <span class='text-green-600'>Touch</span>",
+        contactDesc: "Have a question about our products or interested in wholesale/bulk orders?<br>\n" +
             "            Send us a message and our team will get back to you within 24 hours.",
         contactName: "Full Name",
         contactPhone: "Phone Number",
@@ -61,7 +63,8 @@ const translations = {
         contactMapHours: "Opening Hours",
         contactMapOpeningTime: "Sun - Fri: 9:00 AM - 6:00 PM",
         // FAQ Section
-        faqTitle: "Frequently Asked Questions",
+        faqTag:"Assistance",
+        faqTitle: "Common Questions",
         faqDesc: "Everything you need to know about our products and service.",
         faq1q: "Do you deliver outside of Nepalgunj?",
         faq1a: "Yes! We provide home delivery across all major cities in Nepal including Kathmandu, Pokhara, Biratnagar, Butwal, and Narayanghat via our courier partners.",
@@ -71,18 +74,26 @@ const translations = {
         faq3q: "How can I place a bulk order for an NGO or Hospital?",
         faq3a: "For bulk inquiries, please use the form in our \"Contact Us\" section or call our office directly at +977-9858059157.\n" +
             "                    We offer special wholesale rates for large quantities.",
+        faqFooterTitle: "Still have questions?",
+        faqFooterBtn: "Contact Our Support Team <i class='fas fa-arrow-right ml-1'></i>",
         // badges section
-        badge1: "Quality Assured",
-        badge2: "Fast Delivery",
-        badge3: "Eco-Friendly",
-        badge4: "Affordable Price",
+        badge1Title: "Quality <br class='lg:hidden'>Assured",
+        badge1Desc: "Certified Korean Biotech",
+        badge2Title: "Fast <br class='lg:hidden'>Delivery",
+        badge2Desc: "Across Nepal",
+        badge3Title: "Eco <br class='lg:hidden'>Friendly",
+        badge3Desc: "Sustainable & Bio-tech",
+        badge4Title: "Affordable <br class='lg:hidden'>Price",
+        badge4Desc: "Premium for Everyone",
         // testimonial section
         testimonialTitle1: "Real Stories",
         testimonialTitle2: "Trusted by Nepali Families",
         testimonial1Desc: "Ordering diapers used to be a hassle, but Sanitary Nepal makes it so easy. The WhatsApp ordering is perfect for busy moms!",
         testimonial1Name: "Sushila Karki",
         testimonial1Address: "Kathmandu",
-        testimonial2Desc: "The Bamboo Organic pads are a game changer. Soft,absorbent, and I love that they are better for the environment.",
+        testimonial2Desc: "I used to struggle with severe cramps every month, but the built-in " +
+            "            <span class='text-purple-700 font-bold'>Bio-Tech relief strip</span>" +
+            "            is a miracle. I feel so much more comfortable and relaxed now!",
         testimonial2Name: "Rita Poudel",
         testimonial2Address: "Pokhara",
         testimonial3Desc: "Highly recommend their bulk delivery for our local health clinic. Always on time and the quality is consistent.",
@@ -126,7 +137,7 @@ const translations = {
         termsOfService: "Terms of Service",
         madeInNepal: "Made with <i class='fas fa-heart text-red-500'></i> in Nepal",
         // hamburger menu
-        changeLanguage: "<i class='fas fa-globe'></i> Change Language"
+        changeLanguage: "Change Language"
         // others ---
 
     },
@@ -155,12 +166,13 @@ const translations = {
         featured3Title: "थोक बिक्री",
         // about section
         aboutTitle: "स्वच्छता को लागी हाम्रो मिशन",
-        aboutDesc: "<strong>सेनेटरी नेपाल</strong> मा, हामी विश्वास गर्छौं कि उच्च-गुणस्तरको स्वच्छता\n" +
-            " उत्पादनहरूमा पहुँच मौलिक अधिकार हो। काठमाडौंमा स्थापित, हामी देशभरका परिवारहरूलाई किफायती,\n" +
-            " पर्यावरण-मैत्री, र भरपर्दो सेनेटरी प्याड र बेबी डायपर प्रदान गर्न समर्पित छौं।",
+        aboutDesc: "<strong>सेनेटरी नेपाल</strong> मा,हामी विश्वास गर्छौं कि उच्च-गुणस्तरको स्वच्छता विलासिता मात्र होइन, यो एक <span class='text-green-600'>" +
+            "मौलिक अधिकार</span> पनि हो। हामी <span class='text-green-600'>अत्याधुनिक कोरियन प्रविधि</span> र दैनिक नेपाली जनजीवन बीचको दूरी मेटाउने काम गर्छौं।",
+        aboutSince: "२०२६ देखि",
         aboutList1: "छालासम्बन्धी परीक्षण गरिएका उत्पादनहरू",
         aboutList2: "दिगो र जैविक रूपमा विघटनशील विकल्पहरू",
         aboutList3: "सबै ७ प्रान्तहरूमा छिटो डेलिभरी",
+        aboutList4: "समुदाय केन्द्रित",
         // category-cards section
         categoryTitle: "हाम्रो उत्पादन कोटिहरु",
         categoryDesc1: "आरामदायी र विश्वस्त रहनुहोस्",
@@ -170,6 +182,7 @@ const translations = {
         // shop section
         shopBack: "फिर्ता",
         shopSortFeatured: "क्रमबद्ध: विशेष",
+        shopSorDefault: "क्रमबद्ध: पूर्वनिर्धारित",
         shopSortLowToHigh: "मूल्य: कम देखि उच्च",
         shopSortHighToLow: "मूल्य: उच्च देखि कम",
         shopAllProducts: "सबै सामानहरू हेर्नुहोस्",
@@ -178,8 +191,8 @@ const translations = {
         addToCart: "कार्टमा थप्नुहोस्",
         noProducts: "तपाईंको मापदण्डसँग मेल खाने कुनै सामानहरू भेटिएन।",
         // contact section
-        contactTitle: "सम्पर्कमा रहनुहोस्",
-        contactDesc: "हाम्रा उत्पादनहरूको बारेमा कुनै प्रश्न छ वा थोक/थोक अर्डरहरूमा रुचि छ?\n" +
+        contactTitle: "<span class='text-green-600'>सम्पर्कमा</span> रहनुहोस्",
+        contactDesc: "हाम्रा उत्पादनहरूको बारेमा कुनै प्रश्न छ वा थोक अर्डरहरूमा रुचि छ?<br>\n" +
             " हामीलाई सन्देश पठाउनुहोस् र हाम्रो टोलीले २४ घण्टा भित्र तपाईंलाई सम्पर्क गर्नेछ।",
         contactName: "पूरा नाम",
         contactPhone: "फोन नम्बर",
@@ -188,9 +201,10 @@ const translations = {
         contactMapTitle: "हाम्रो प्रधान कार्यालय",
         contactMapAddress: "नयाँ सडक, नेपालगञ्ज, नेपाल",
         contactMapHours: "खुल्ने समय",
-        contactMapOpeningTime: "आइतबार - शुक्रबार: बिहान ९:०० - साँझ ६:००",
+        contactMapOpeningTime: "आइतबार - शुक्रबार <br>बिहान ९:०० - साँझ ६:००",
         // FAQ Section
-        faqTitle: "बारम्बार सोधिने प्रश्नहरू",
+        faqTag:"सहयोगको लागि",
+        faqTitle: "सामान्य प्रश्नहरू",
         faqDesc: "हाम्रा उत्पादन र सेवाको बारेमा तपाईंले जान्नुपर्ने सबै कुरा।",
         faq1q: "के तपाईं नेपालगञ्ज बाहिर डेलिभरी गर्नुहुन्छ?",
         faq1a: "हो! हामी हाम्रा कुरियर साझेदारहरू मार्फत काठमाडौं, पोखरा, विराटनगर, बुटवल र नारायणघाट लगायत नेपालका सबै प्रमुख शहरहरूमा होम डेलिभरी प्रदान गर्दछौं।",
@@ -200,18 +214,26 @@ const translations = {
         faq3q: "म कसरी गैरसरकारी संस्था वा अस्पतालको लागि थोक अर्डर गर्न सक्छु?",
         faq3a: "थोक सोधपुछको लागि, कृपया हाम्रो \"हामीलाई सम्पर्क गर्नुहोस्\" खण्डमा रहेको फारम प्रयोग गर्नुहोस् वा +९७७-९८५८०५९१५७ मा सिधै हाम्रो कार्यालयमा कल गर्नुहोस्।\n" +
             " हामी ठूलो परिमाणको लागि विशेष थोक दरहरू प्रदान गर्दछौं।",
+        faqFooterTitle: "अझै प्रश्नहरू छन्?",
+        faqFooterBtn: "हाम्रो सपोर्ट टिमसँग सम्पर्क गर्नुहोस् <i class='fas fa-arrow-right ml-1'></i>",
         // badges section
-        badge1: "गुणस्तर सुनिश्चित",
-        badge2: "छिटो डेलिभरी",
-        badge3: "पर्यावरण मैत्री",
-        badge4: "किफायती मूल्य",
+        badge1Title: "गुणस्तर <br class='lg:hidden'>सुनिश्चित",
+        badge1Desc: "कोरियाली प्रविधिद्वारा प्रमाणित",
+        badge2Title: "छिटो <br class='lg:hidden'>डेलिभरी",
+        badge2Desc: "नेपालभर",
+        badge3Title: "पर्यावरण <br class='lg:hidden'>मैत्री",
+        badge3Desc: "दिगो र बायो-टेक",
+        badge4Title: "किफायती <br class='lg:hidden'>मूल्य",
+        badge4Desc: "सबैका लागि उत्कृष्ट",
         // testimonial section
         testimonialTitle1: "वास्तविक कथाहरू",
         testimonialTitle2: "नेपाली परिवारहरूद्वारा विश्वसनीय",
         testimonial1Desc: "डायपर अर्डर गर्नु पहिले झन्झट थियो, तर स्यानिटरी नेपालले यसलाई यति सजिलो बनाएको छ। व्यस्त आमाहरूका लागि व्हाट्सएप अर्डर गर्नु एकदमै उपयुक्त छ!",
         testimonial1Name: "सुशीला कार्की",
         testimonial1Address: "काठमाडौं ।",
-        testimonial2Desc: "बाँसको अर्गानिक प्याडहरू खेल परिवर्तनकर्ता हुन्। नरम, अवशोषित, र मलाई मन पर्छ कि तिनीहरू वातावरणको लागि राम्रो छन्।",
+        testimonial2Desc: "मलाई हरेक महिना महिनावारीको समयमा धेरै पेट दुख्ने समस्या थियो, तर यस प्याडमा भएको" +
+            "            <span class='text-purple-700 font-bold'> बायो-टेक रिलिफ स्ट्रिप </span>" +
+            "            मेरो लागि चमत्कार जस्तै भयो। अब म पहिलेभन्दा धेरै सहज र ढुक्क महसुस गर्छु!",
         testimonial2Name: "रीता पौडेल",
         testimonial2Address: "पोखरा",
         testimonial3Desc: "हाम्रो स्थानीय स्वास्थ्य क्लिनिकको लागि उनीहरूको थोक डेलिभरीको लागि अत्यधिक सिफारिस गर्दछौं। सधैं समयमै र गुणस्तर एकरूप हुन्छ।",
@@ -255,7 +277,7 @@ const translations = {
         termsOfService: "सेवाका सर्तहरू",
         madeInNepal: 'नेपालको <i class=\'fas fa-heart text-red-500\'></i> मायाले बनेको',
         // hamburger menu
-        changeLanguage: "<i class='fas fa-globe'></i> भाषा परिवर्तन गर्नुहोस्",
+        changeLanguage: "भाषा परिवर्तन गर्नुहोस्",
         // other ---
     }
 };
