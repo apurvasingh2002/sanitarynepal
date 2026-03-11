@@ -22,6 +22,28 @@ header {
     }
 }
 
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Class to trigger when menu is open */
+#mobile-menu-sidebar.open .nav-item {
+    animation: slideInFromLeft 0.5s ease forwards;
+}
+
+/* Staggered Delays */
+#mobile-menu-sidebar.open .nav-item:nth-child(1) { animation-delay: 0.1s; }
+#mobile-menu-sidebar.open .nav-item:nth-child(2) { animation-delay: 0.2s; }
+#mobile-menu-sidebar.open .nav-item:nth-child(3) { animation-delay: 0.3s; }
+#mobile-menu-sidebar.open .nav-item:nth-child(4) { animation-delay: 0.4s; }
+
 .animate-pop {
     opacity: 0; /* Hidden initially */
     animation: pop 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards;
@@ -129,7 +151,7 @@ header {
     }
 }
 .animate-fade-in-up {
-    animation: fadeInUp 0.5s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 @keyframes zoomIn {
