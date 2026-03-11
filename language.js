@@ -324,5 +324,6 @@ function toggleLanguage() {
 
     // Refresh the cart and products to reflect language change
     renderProducts(currentCategory);
+    checkCartStatusOnLoading();
     renderCart();
 }
