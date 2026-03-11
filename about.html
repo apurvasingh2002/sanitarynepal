@@ -297,45 +297,70 @@
   </div>
 </div>
 <div id="mobile-menu-overlay" onclick="toggleMobileMenu()"
-     class="fixed inset-0 bg-black/40 z-[290] hidden backdrop-blur-sm"></div>
+     class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[250] transition-opacity duration-300 opacity-0"></div>
 <div id="mobile-menu-sidebar"
-     class="fixed top-0 left-0 w-[280px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-gray-100">
-  <div class="p-6 flex flex-col h-full">
-    <div class="flex justify-between items-center mb-10">
-      <div class="text-xl font-bold text-gray-900" data-i18n="sanitaryNepal">Sanitary <span
-              class="text-green-600">Nepal</span></div>
-      <button onclick="toggleMobileMenu()" class="text-3xl text-gray-300 hover:text-red-500">&times;</button>
+     class="fixed top-0 left-0 w-[300px] h-full bg-white z-[300] shadow-2xl transform -translate-x-full
+     transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) border-r border-gray-100">
+
+    <div class="p-8 flex flex-col h-full bg-gradient-to-b from-white via-white to-green-50/30">
+        <div class="flex justify-between items-center mb-12">
+            <div class="text-2xl font-black text-gray-900 tracking-tighter">
+                Sanitary <span class="text-green-600">Nepal</span>
+            </div>
+            <button onclick="toggleMobileMenu()"
+                    class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:text-red-500 transition-all">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav-links" class="flex flex-col gap-2">
+            <a href="index.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navHome">Home</span>
+            </a>
+
+            <a href="shop.html?category=all" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navShop">Shop</span>
+            </a>
+
+            <a href="about.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navAbout">About</span>
+            </a>
+
+            <a href="contact.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navContact">Contact</span>
+            </a>
+            <a href="faq.html" onclick="toggleMobileMenu();"
+               class="nav-item group flex items-center gap-4 p-2 rounded-2xl hover:bg-green-600 transition-all duration-300 opacity-0">
+                <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-white/20 group-hover:text-white transition-all">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="font-bold text-gray-700 group-hover:text-white" data-i18n="navContact">FAQ</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto pt-8 border-t border-gray-100">
+            <button onclick="toggleLanguage()"
+                    class="w-full py-4 bg-gray-900 rounded-2xl text-xs font-black text-white uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl active:scale-95 transition-all">
+                <i class="fas fa-globe text-green-500"></i> <span data-i18n="changeLanguage">Change Language</span>
+            </button>
+            <p class="mt-6 text-[10px] text-center text-gray-400 font-bold uppercase tracking-[0.3em]">Version - 1.0</p>
+        </div>
     </div>
-
-    <nav class="flex flex-col gap-1 text-base font-semibold text-gray-600">
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('home')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-home text-green-600 w-6"></i> <span data-i18n="navHome">Home</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            showShop('all')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-shopping-bag text-green-600 w-6"></i> <span data-i18n="navShop">Shop</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('about-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-info-circle text-green-600 w-6"></i> <span data-i18n="navAbout">About</span>
-      </a>
-      <a href="javascript:void(0)" onclick="toggleMobileMenu();
-            navigateTo('contact-section')" class="flex items-center gap-4 p-4 hover:bg-green-50 rounded-2xl transition">
-        <i class="fas fa-envelope text-green-600 w-6"></i> <span data-i18n="navContact">Contact</span>
-      </a>
-    </nav>
-
-    <div class="mt-auto space-y-4">
-      <button onclick="toggleLanguage()"
-              class="w-full py-3 bg-gray-50 rounded-xl text-sm font-bold text-gray-700 flex items-center justify-center gap-2"
-              data-i18n="changeLanguage">
-        <i class="fas fa-globe"></i> भाषा परिवर्तन गर्नुहोस्
-      </button>
-
-      <p class="text-[10px] text-center text-gray-400 uppercase tracking-widest">v1.0 • Nepalgunj, Nepal</p>
-    </div>
-  </div>
 </div>
 <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black opacity-50 z-[190] hidden"></div>
 <div id="toast-container" class="fixed top-5 right-5 z-[200] flex flex-col gap-3"></div>
