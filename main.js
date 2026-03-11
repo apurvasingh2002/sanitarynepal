@@ -211,7 +211,7 @@ const products = [
     ,
     {
         id: "14",
-        name: "Junior Bunny Ultra Classic Baby Diaper",
+        name: "Junior Bunny Baby Diaper",
         price: 299,
         discountedPrice: 199,
         qty: 20,
@@ -239,6 +239,7 @@ function renderProducts(category = 'all') {
 
 function renderFilteredItems(items) {
     const grid = document.getElementById('product-grid');
+    if(!grid) return;
     grid.innerHTML = '';
 
     if (items.length === 0) {
@@ -287,7 +288,7 @@ function renderFilteredItems(items) {
                                     class="w-full py-2.5 bg-${color}-50 text-${color}-600 rounded-lg text-[12px] sm:text-xs font-black 
                                     hover:bg-${color}-600 hover:text-white active:scale-95 transition-all flex items-center justify-center gap-2">
                                     <i class="fas fa-cart-plus"></i>
-                                    <span>${translations[currentLang]["addToCart"]}</span>                    
+                                    <span data-i18n="addToCart">${translations[currentLang]["addToCart"]}</span>                    
                                 </button>
                             </div>
                         </div>
@@ -327,7 +328,7 @@ function renderFeaturedItems() {
                             <div class="flex-grow flex flex-col justify-between">
                                 <div>
                                     <h4 class="font-bold text-sm text-gray-800 leading-snug group-hover:text-green-600 transition-colors">
-                                        ${product.name} (${product.size}) ${product.qty} pieces
+                                        ${product.name} ${product.qty} pieces
                                     </h4>
                                     <div class="flex items-center gap-2">
                                         <span class="text-${color}-600 font-black text-base">Rs. ${product.price}</span>
@@ -336,8 +337,8 @@ function renderFeaturedItems() {
                                 <div class="pt-3 border-t border-gray-50 flex items-center justify-between">
                                     <button onclick="animateAddToCart(this, '${product.id}')" id="addToCartBtn-${product.id}"
                                         class="flex-1 py-2 bg-${color}-50 text-${color}-600 rounded-lg text-xs font-black hover:bg-${color}-600 
-                                                hover:text-white active:scale-95 transition-all flex items-center justify-center gap-2">                                        
-                                        <i class="fas fa-cart-plus"></i><span>${translations[currentLang]["addToCart"]}</span>
+                                                hover:text-white active:scale-95 transition-all flex items-center justify-center gap-2" >                                        
+                                        <i class="fas fa-cart-plus" ></i><span data-i18n="addToCart">${translations[currentLang]["addToCart"]}</span>
                                     </button>
                                 </div>
                             </div>
@@ -380,10 +381,7 @@ async function executeShare(name) {
 function showShop(category) {
     document.getElementById('priceSort').selectedIndex = 0;
     document.getElementById('productSearch').value = "";
-    currentCategory = category; // Update our tracker
-    // 1. Switch to the shop view
-    navigateTo('shop-section');
-    // 2. Render the correct products
+    // Render the correct products
     renderProducts(category);
     renderOrderHistory();
     // 3. Highlight the correct button
@@ -658,37 +656,6 @@ function scrollTestimonials(direction) {
     });
 }
 
-function handleNavClick(element, target, isShop = false) {
-    // 1. "Policing" - Reset all links to their inactive state
-    document.querySelectorAll('.nav-link').forEach(link => {
-        // Reset text color
-        link.classList.remove('text-green-600');
-        link.classList.add('text-gray-600');
-
-        // Reset underline width
-        const underline = link.querySelector('.active-underline');
-        if (underline) {
-            underline.style.width = '0';
-        }
-    });
-
-    // 2. Activate the clicked link
-    element.classList.add('text-green-600');
-    element.classList.remove('text-gray-600');
-
-    // Lock the underline to 100%
-    const activeUnderline = element.querySelector('.active-underline');
-    if (activeUnderline) {
-        activeUnderline.style.width = '100%';
-    }
-
-    // 3. Navigation Actions
-    if (isShop) {
-        showShop(target);
-    } else {
-        navigateTo(target);
-    }
-}
 
 function changeQuantity(index, delta) {
     // Update the quantity
@@ -761,24 +728,6 @@ function addToCart(id, name, price) {
     showToast(name);
     // alert(`${name} added to cart!`);
 }
-
-// --- Event Listeners ---
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial UI update
-    updateCartUI();
-
-    // Listen for clicks on any "Add to Cart" button
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-to-cart-btn')) {
-            const btn = e.target;
-            const id = btn.getAttribute('data-id');
-            const name = btn.getAttribute('data-name');
-            const price = btn.getAttribute('data-price');
-
-            addToCart(id, name, price);
-        }
-    });
-});
 
 // 3. Remove Item
 function removeFromCart(index) {
@@ -950,7 +899,7 @@ function checkoutWhatsApp() {
 }
 
 // Ensure the header cart icon triggers the sidebar
-document.addEventListener('DOMContentLoaded', () => {
+function checkCartIconTrigger(){
     const cartIcon = document.querySelector('.fa-shopping-cart');
     if (cartIcon) {
         cartIcon.parentElement.onclick = (e) => {
@@ -958,7 +907,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleCart();
         };
     }
-});
+}
 
 function showToast(name, type = 'cart') {
     const container = document.getElementById('toast-container');
@@ -1054,36 +1003,6 @@ function closeModal() {
     }
 }
 
-function navigateTo(sectionId) {
-    // 1. List all possible sections on your site
-    const allSections = ['hero-section', 'category-cards', 'shop-section', 'about-section',
-        'contact-section', 'faq-section', 'featured-slider', 'testimonials-section'];
-
-    // 2. Hide EVERY section first to clear the screen
-    allSections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.add('hidden');
-    });
-    document.getElementById('slider-container').innerHTML = "";
-    // 3. Show the specific content based on the link clicked
-    if (sectionId === 'home') {
-        document.getElementById('hero-section').classList.remove('hidden');
-        document.getElementById('category-cards').classList.remove('hidden');
-        document.getElementById('featured-slider').classList.remove('hidden');
-        renderFeaturedItems();
-        checkCartStatusOnLoading();
-        document.getElementById('testimonials-section').classList.remove('hidden');
-    } else if (sectionId === 'shop-section') {
-        document.getElementById('shop-section').classList.remove('hidden');
-        return;
-    } else {
-        // Other pages (Shop, About, Contact) only need ONE section
-        const target = document.getElementById(sectionId);
-        if (target) target.classList.remove('hidden');
-    }
-    window.scrollTo(0, 0);
-}
-
 function toggleFAQ(id) {
     const content = document.getElementById(`faq-${id}`);
     const icon = document.getElementById(`icon-${id}`);
@@ -1104,13 +1023,23 @@ function toggleMobileMenu() {
     const sidebar = document.getElementById('mobile-menu-sidebar');
     const overlay = document.getElementById('mobile-menu-overlay');
 
-    // Slide animation
+    // Toggle the sidebar position
     sidebar.classList.toggle('-translate-x-full');
-    // Fade overlay
-    overlay.classList.toggle('hidden');
 
-    // Prevent body scroll when menu is open
-    if (!sidebar.classList.contains('-translate-x-full')) {
+    // Toggle the 'open' class to trigger the internal text animations
+    sidebar.classList.toggle('open');
+
+    // Fade overlay (Remove 'hidden' and use opacity for smooth transition)
+    if (overlay.classList.contains('hidden')) {
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.add('opacity-100'), 10);
+    } else {
+        overlay.classList.remove('opacity-100');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+    }
+
+    // Prevent body scroll
+    if (sidebar.classList.contains('open')) {
         document.body.style.overflow = 'hidden';
     } else {
         document.body.style.overflow = 'auto';
@@ -1146,16 +1075,32 @@ function initScrollReveal() {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-// Run this when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    initScrollReveal();
-    renderFeaturedItems();
-    checkCartStatusOnLoading();
-});
-
 function checkCartStatusOnLoading() {
     if (cart.length > 0)
         cart.forEach(item => {
             toggleCartStatus(document.getElementById("addToCartBtn-" + item.id));
         });
 }
+
+// Listen for clicks on any "Add to Cart" button
+function addToCartListener(){
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-to-cart-btn')) {
+            const btn = e.target;
+            const id = btn.getAttribute('data-id');
+            const name = btn.getAttribute('data-name');
+            const price = btn.getAttribute('data-price');
+
+            addToCart(id, name, price);
+        }
+    });
+}
+
+// Run this for global DOM load
+document.addEventListener('DOMContentLoaded', function () {
+    updateCartUI();
+    addToCartListener();
+    initScrollReveal();
+    checkCartIconTrigger();
+});
+
