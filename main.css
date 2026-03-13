@@ -43,6 +43,7 @@ header {
 #mobile-menu-sidebar.open .nav-item:nth-child(2) { animation-delay: 0.2s; }
 #mobile-menu-sidebar.open .nav-item:nth-child(3) { animation-delay: 0.3s; }
 #mobile-menu-sidebar.open .nav-item:nth-child(4) { animation-delay: 0.4s; }
+#mobile-menu-sidebar.open .nav-item:nth-child(5) { animation-delay: 0.5s; }
 
 .animate-pop {
     opacity: 0; /* Hidden initially */
