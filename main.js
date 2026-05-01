@@ -2,7 +2,7 @@ const products = [
     {
         id: '1',
         name: "Womzy 320 MM Ultra Thin",
-        price: 399,
+        price: 530,
         discountedPrice: 249,
         qty: 30,
         size: "XXL",
@@ -21,7 +21,7 @@ const products = [
     {
         id: '2',
         name: "WOMZY Sanitary Pads – Dry Gel Technology",
-        price: 349,
+        price: 520,
         discountedPrice: 199,
         qty: 30,
         size: "XXL",
@@ -38,7 +38,7 @@ const products = [
     {
         id: '3',
         name: "WOMZY Sanitary Pads – Dry Gel Technology",
-        price: 329,
+        price: 500,
         discountedPrice: 179,
         qty: 30,
         size: "XL",
@@ -55,7 +55,7 @@ const products = [
     {
         id: '4',
         name: "Womzy 320 MM Ultra Thin",
-        price: 80,
+        price: 110,
         discountedPrice: 50,
         qty: 6,
         size: "XXL",
@@ -74,7 +74,7 @@ const products = [
     {
         id: '5',
         name: "Womzy 280 MM Straight Fit",
-        price: 30,
+        price: 75,
         discountedPrice: 25,
         qty: 6,
         size: "XL",
@@ -89,7 +89,7 @@ const products = [
     {
         id: '6',
         name: "Womzy Maxi Cottony Jumbo Sanitary Pads",
-        price: 399,
+        price: 450,
         discountedPrice: 299,
         qty: 40,
         size: "XXXL",
@@ -104,7 +104,7 @@ const products = [
     {
         id: '7',
         name: "Womzy Maxi Cottony Jumbo Sanitary Pads",
-        price: 349,
+        price: 420,
         discountedPrice: 199,
         qty: 40,
         size: "XXL",
@@ -119,7 +119,7 @@ const products = [
     {
         id: '8',
         name: "Womzy Period Panties",
-        price: 1800,
+        price: 580,
         discountedPrice: 1500,
         qty: 10,
         size: "XL",
