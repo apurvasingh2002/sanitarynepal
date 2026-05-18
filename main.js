@@ -454,7 +454,7 @@ function toggleCart() {
 function renderCart() {
     const list = document.getElementById('cart-items-list');
     const totalEl = document.getElementById('cart-total-price');
-    const freeShippingThreshold = 2000;
+    const freeShippingThreshold = 300;
     // Select the footer container (the div with p-6 and border-t)
     const cartFooter = document.querySelector('#cart-sidebar .p-6.border-t');
 
