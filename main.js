@@ -21,7 +21,7 @@ const products = [
     {
         id: '2',
         name: "WOMZY Sanitary Pads – Dry Gel Technology",
-        price: 360,
+        price: 380,
         discountedPrice: 199,
         qty: 30,
         size: "XXL",
@@ -119,7 +119,7 @@ const products = [
     {
         id: '8',
         name: "Womzy Period Panties",
-        price: 580,
+        price: 600,
         discountedPrice: 1500,
         qty: 10,
         size: "XL",
