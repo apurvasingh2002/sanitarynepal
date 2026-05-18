@@ -891,7 +891,7 @@ function checkoutWhatsApp() {
     }
     message += "Please confirm availability and delivery time.";
     // Replace with your actual business number
-    const phoneNumber = "9779858070017";
+    const phoneNumber = "9779858059157";
     // save order history locally
     saveOrderToHistory(cart, total);
     renderOrderHistory();
