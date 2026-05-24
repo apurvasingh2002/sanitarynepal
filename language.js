@@ -1,7 +1,7 @@
 const translations = {
     en: {
         // offer section
-        offerTitle: "<i class='fas fa-truck-moving mr-2'></i> Free delivery on orders over Rs. 2,000!",
+        offerTitle: "<i class='fas fa-truck-moving mr-2'></i> Free delivery on orders over Rs. 300!",
         // header section
         headerTitle: "सेनेटरी नेपाल",
         navHome: "Home",
@@ -143,7 +143,7 @@ const translations = {
     },
     ne: {
         // offer section
-        offerTitle: "<i class='fas fa-truck-moving mr-2'></i> २००० रुपैयाँभन्दा माथिको अर्डरमा नि:शुल्क डेलिभरी!",
+        offerTitle: "<i class='fas fa-truck-moving mr-2'></i> ३०० रुपैयाँभन्दा माथिको अर्डरमा नि:शुल्क डेलिभरी!",
         // header section
         headerTitle: "सेनेटरी नेपाल",
         navHome: "गृहपृष्ठ",
